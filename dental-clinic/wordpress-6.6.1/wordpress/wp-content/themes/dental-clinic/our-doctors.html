@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html class="page-doctors" lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Наши врачи</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preload" href="#" type="font/woff2" as="font">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script type="module" src="scripts/index.js" defer></script>
+</head>
+
+<body class="page-doctors__body">
+  <header class="page-doctors__header header">
+    <div class="header__container container">
+      <address class="header__address address">
+        <ul class="address__list">
+          <li class="address__item address__item--map">
+            <p>г. Новосибирск, ул. Советская, д. 46/2</p>
+          </li>
+          <li class="address__item address__item--clock">
+            <p>Ежедневно с 9:00 до 21:00</p>
+          </li>
+          <li class="address__item address__item--tel">
+            <a href="tel:+73832093255">+7(383)2093255</a>
+          </li>
+          <li class="address__item address__item--tel">
+            <a href="tel:+79639456363">+7(963)9456363</a>
+          </li>
+        </ul>
+
+        <a class="address__eye" href="#">
+          <span class="address__eye-text address__eye-text--hidden">Версия для слабовидящих</span>
+        </a>
+
+        <ul class="address__socials socials">
+          <li class="socials__social ">
+            <a class="socials__link socials__link--whatsapp" href="https://wa.me/+79639456363">
+              <span class="visually-hidden">What's App</span>
+            </a>
+          </li>
+          <li class="socials__social">
+            <a class="socials__link socials__link--instagram" href="https://www.instagram.com/sangov_clinic">
+              <span class="visually-hidden">Instagram</span>
+            </a>
+          </li>
+          <li class="socials__social">
+            <button id="modal-button" class="socials__link socials__link--mail button" type="button">
+              <span class="visually-hidden">Email</span>
+            </button>
+          </li>
+        </ul>
+      </address>
+
+      <div class="header__bottom">
+        <a class="header__logo logo" href="index.html">
+          <img class="logo__image" src="images/clinic-logo.png" width="59" height="64" alt="Clinic Logo.">
+          <p class="logo__description">Стоматологическая<br>клиника Сангова</p>
+        </a>
+
+        <div class="header__menu-wrapper menu-wrapper">
+          <ul class="menu-wrapper__list menu">
+            <li class="menu__item">
+              <a class="menu__link" href="services.html">Услуги</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="prices.html">Цены</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="our-works.html">Наши работы</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="our-doctors.html">Врачи</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="about.html">О нас</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="contacts.html">Контакты</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-wrapper__search">
+          <form class="menu-wrapper__form" action="#" method="post">
+            <label>
+              <input class="menu-wrapper__input" type="text" name="search" placeholder="Поиск">
+            </label>
+          </form>
+          <button id="modal-button" class="menu-wrapper__button button button--primary"
+            type="button">Записаться</button>
+        </div>
+
+        <button class="header__mobile-button button" type="button">
+          <span class="visually-hidden">Кнопка открытыя меню</span>
+        </button>
+
+      </div>
+
+
+      <div class="header__mobile mobile">
+        <ul class="mobile__menu menu">
+          <li class="menu__item">
+            <a class="menu__link" href="services.html">Услуги</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="prices.html">Цены</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="our-works.html">Наши работы</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="our-doctors.html">Врачи</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="about.html">О нас</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="contacts.html">Контакты</a>
+          </li>
+        </ul>
+        <address class="mobile__address address">
+          <ul class="mobile__address-list address__list">
+            <li class="mobile__address-item address__item address__item--map">
+              <p>г. Новосибирск, ул. Советская, д. 46/2</p>
+            </li>
+            <li class="address__item address__item--clock">
+              <p>Ежедневно с 9:00 до 21:00</p>
+            </li>
+            <li class="address__item address__item--tel">
+              <a href="tel:+73832093255">+7(383)2093255</a>
+            </li>
+            <li class="address__item address__item--tel">
+              <a href="tel:+79639456363">+7(963)9456363</a>
+            </li>
+          </ul>
+
+          <ul class="socials">
+            <li class="socials__social ">
+              <a class="socials__link socials__link--whatsapp" href="https://wa.me/+79639456363">
+                <span class="visually-hidden">What's App</span>
+              </a>
+            </li>
+            <li class="socials__social">
+              <a class="socials__link socials__link--instagram" href="https://www.instagram.com/sangov_clinic">
+                <span class="visually-hidden">Instagram</span>
+              </a>
+            </li>
+            <li class="socials__social">
+              <button id="modal-button" class="socials__link socials__link--mail button" type="button">
+                <span class="visually-hidden">Email</span>
+              </button>
+            </li>
+          </ul>
+        </address>
+
+        <div class="mobile__search">
+          <button id="modal-button" class="mobile__button button button--primary" type="button">Записаться</button>
+          <form class="mobile__form" action="#" method="post">
+            <label>
+              <input class="mobile__input" type="text" name="search" placeholder="Поиск">
+            </label>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+
+  </header>
+
+  <main class="page-doctors__main">
+    <h1 class="visually-hidden">Наши врачи</h1>
+
+    <section class="page-doctors__promo promo">
+      <div class="promo__container container">
+        <div class="promo__wrapper">
+          <h2 class="promo__title title title--secondary-color">Наши работы</h2>
+          <p class="promo__text">Ознакомьтесь с примерами наших успешно выполненных стоматологических процедур. Наши
+            кейсы демонстрируют высокий уровень мастерства.</p>
+          <button id="modal-button" class="promo__button button button--primary" type="button">Записаться</button>
+        </div>
+        <picture class="promo__picture promo__picture--order">
+          <source media="(min-width: 1440px)" type="image/png" srcset="images/doctor-with-desktop-desktop.png"
+            width="582" height="358">
+          <img class="promo__image" src="images/doctor-with-desktop.png" width="335" height="250" alt="Чистка зубов.">
+        </picture>
+      </div>
+    </section>
+
+    <section class="page-doctors__team team team--background-color">
+      <div class="team__container container">
+        <h2 class="visually-hidden">Наши врачи</h2>
+
+        <ul class="team__list team__list--with-button">
+          <li class="team__item">
+            <img class="team__image" src="images/sangov.png" width="335" height="250" alt="Доктор Сангов.">
+            <h3 class="team__subtitle"><span class="title title--size-small">Сангов</span>Абдулло Мамашарифович</h3>
+            <p class="team__text">Главный врач стоматолог, хирург-имплантолог, ортопед,
+              терапевт<br><br>хирург-стоматолог со стажем более 8 лет.
+              Специалист в реконструктивной хирургии
+              (костная пластика, синус-лифтинг,аугментация). Проводит операции по микрохирургической пластике дёсен.
+              Работает только с применением оптики, микроскопа.</p>
+            <ul class="team__socials socials">
+              <li class="socials__social">
+                <a class="socials__link socials__link--instagram" target="_blank" rel="noopener noreferrer"
+                  href="https://www.instagram.com/dr.sangov/">
+                  <span class="visually-hidden">Instagram</span>
+                </a>
+              </li>
+              <li class="socials__social">
+                <a class="socials__link socials__link--prodoctorov" target="_blank" rel="noopener noreferrer"
+                  href="https://prodoctorov.ru/novosibirsk/vrach/693318-sangov/">
+                  <span class="visually-hidden">Продокторов</span>
+                </a>
+              </li>
+            </ul>
+            <div class="team__wrapper">
+              <button id="modal-button" class="team__button button button--primary" type="button">Записаться</button>
+              <button class="team__button-second button" type="button">Расписание</button>
+            </div>
+          </li>
+          <li class="team__item">
+            <img class="team__image" src="images/pasternak.png" width="335" height="250" alt="Доктор Сангов.">
+            <h3 class="team__subtitle"><span class="title title--size-small">Пастернак</span>Ксения Владимировна</h3>
+            <p class="team__text">Врач стоматолог-терапевт
+              микроскопист, ортопед<br><br>Ксения Владимировна-специализируется на лечении кариеса,художественной
+              реставрации жевательной и центральной группы зубов, эндодонтическом лечении. Стоматологический прием
+              проводит только под микроскопом,
+              в период лечения ведется фотопротокол.</p>
+            <div class="team__wrapper">
+              <button id="modal-button" class="team__button button button--primary" type="button">Записаться</button>
+              <button class="team__button-second button" type="button">Расписание</button>
+            </div>
+          </li>
+          <li class="team__item">
+            <img class="team__image" src="images/masrurov.png" width="335" height="250" alt="Доктор Сангов.">
+            <h3 class="team__subtitle"><span class="title title--size-small">Масруров</span>Шахриер
+              Гафурович</h3>
+            <p class="team__text">Врач стоматолог общей практики<br><br>Специализируется на составлении индивидуального
+              комплексного плана лечения, лечении кариеса и его осложнений, профессиональная чистка зубов. Делает
+              реставрации жевательной группы зубов. Удаление зубов.</p>
+            <div class="team__wrapper">
+              <button id="modal-button" class="team__button button button--primary" type="button">Записаться</button>
+              <button class="team__button-second button" type="button">Расписание</button>
+            </div>
+          </li>
+          <li class="team__item">
+            <img class="team__image" src="images/obisoda.png" width="335" height="250" alt="Доктор Сангов.">
+            <h3 class="team__subtitle"><span class="title title--size-small">Обидзода</span>Мухаммад Амин</h3>
+            <p class="team__text">Ассистент</p>
+            <div class="team__wrapper">
+              <button id="modal-button" class="team__button button button--primary" type="button">Записаться</button>
+              <button class="team__button-second button" type="button">Расписание</button>
+            </div>
+          </li>
+          <li class="team__item">
+            <img class="team__image" src="images/odinaeva.png" width="335" height="250" alt="Доктор Сангов.">
+            <h3 class="team__subtitle"><span class="title title--size-small">Одинаева</span>Ганджина Хайевна</h3>
+            <p class="team__text">Старшая медицинская сестра</p>
+            <div class="team__wrapper">
+              <button id="modal-button" class="team__button button button--primary" type="button">Записаться</button>
+              <button class="team__button-second button" type="button">Расписание</button>
+            </div>
+          </li>
+          <li class="team__item">
+            <img class="team__image" src="images/musinjan.png" width="335" height="250" alt="Доктор Сангов.">
+            <h3 class="team__subtitle"><span class="title title--size-small">Мусинжанович</span>Юлчиев Нозим</h3>
+            <p class="team__text">Ассистент</p>
+            <div class="team__wrapper">
+              <button id="modal-button" class="team__button button button--primary" type="button">Записаться</button>
+              <button class="team__button-second button" type="button">Расписание</button>
+            </div>
+          </li>
+          <li class="team__item">
+            <img class="team__image" src="images/suprotki.png" width="335" height="250" alt="Доктор Сангов.">
+            <h3 class="team__subtitle"><span class="title title--size-small">Супротки</span>Ксения Константиновна</h3>
+            <p class="team__text">Администратор</p>
+            <div class="team__wrapper">
+              <button id="modal-button" class="team__button button button--primary" type="button">Записаться</button>
+              <button class="team__button-second button" type="button">Расписание</button>
+            </div>
+          </li>
+          <li class="team__item">
+            <img class="team__image" src="images/panina.png" width="335" height="250" alt="Доктор Сангов.">
+            <h3 class="team__subtitle"><span class="title title--size-small">Панина</span>Дарья Александровна</h3>
+            <p class="team__text">Администратор</p>
+            <div class="team__wrapper">
+              <button id="modal-button" class="team__button button button--primary" type="button">Записаться</button>
+              <button class="team__button-second button" type="button">Расписание</button>
+            </div>
+          </li>
+          <li class="team__item">
+            <img class="team__image" src="images/kershinska.png" width="335" height="250" alt="Доктор Сангов.">
+            <h3 class="team__subtitle"><span class="title title--size-small">Кершинская</span>Александра Романовна</h3>
+            <p class="team__text">Ассистент</p>
+            <div class="team__wrapper">
+              <button id="modal-button" class="team__button button button--primary" type="button">Записаться</button>
+              <button class="team__button-second button" type="button">Расписание</button>
+            </div>
+          </li>
+          <li class="team__item">
+            <img class="team__image" src="images/tambovzeva.png" width="335" height="250" alt="Доктор Сангов.">
+            <h3 class="team__subtitle"><span class="title title--size-small">Тамбовцева</span>Елизавета Павловна</h3>
+            <p class="team__text">Ассистент</p>
+            <div class="team__wrapper">
+              <button id="modal-button" class="team__button button button--primary" type="button">Записаться</button>
+              <button class="team__button-second button" type="button">Расписание</button>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <section class="page-doctors__consultation consultation">
+      <div class="consultation__container">
+        <div class="consultation__wrapper">
+          <h2 class="consultation__title title title--size-small">Записаться на консультацию</h2>
+          <p class="consultation__text">Получите профессиональную помощь от наших экспертов, записавшись на
+            консультацию.</p>
+          <form class="consultation__form" method="post" action="#">
+            <label class="consultation__control">
+              <input class="consultation__input" type="text" name="name" placeholder="Имя">
+            </label>
+            <label class="consultation__control">
+              <input class="consultation__input" type="number" name="tel" placeholder="+7 999 999 99 99">
+            </label>
+            <button class="consultation__button button button--primary" type="submit">Записаться</button>
+          </form>
+        </div>
+        <picture class="consultation__picture">
+          <source media="(min-width: 1440px)" type="image/png" srcset="images/doctor-smile-desktop.png" width="582"
+            height="358">
+          <img class="consultation__image" src="images/doctor-smile.png" width="357" height="250" alt="Чистка зубов.">
+        </picture>
+      </div>
+    </section>
+
+    <section class="page-doctors__review review">
+      <div class="review__container">
+        <h2 class="review__title title">Отзывы</h2>
+        <!-- slider -->
+        <ul class="review__list">
+          <li class="review__item">
+            <p class="review__date">20.05.2024</p>
+            <h3 class="review__name">​Федор Ермолаев</h3>
+            <div class="review__stars"></div>
+            <p>Была нестерпимая острая боль (абсцесс 8ки). Обзвонил клиник 25, и эта единственная где меня смогли
+              принять через 40 минут. Снимок, обезболивание, быстрое и качественное удаление....</p>
+            <button class="review__button button">Читать целиком</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="page-doctors__promotion promotion">
+      <div class="promotion__container container">
+        <h2 class="visually-hidden">Акция</h2>
+        <p class="promotion__description title title--size-small">Восстановление винирами и коронками<br> за один день
+        </p>
+        <div class="promotion__prices">
+          <span class="promotion__price">26 500 ₽</span>
+          <span class="promotion__old-price">35 000 ₽</span>
+        </div>
+        <picture>
+          <source media="(min-width: 1440px)" type="image/jpg" srcset="images/doctor-watching-desktop.jpg" width="582"
+            height="810">
+          <img class="promotion__image" src="images/doctor-watching.png" width="335" height="300" alt="Доктор смотрит.">
+        </picture>
+        <p class="promotion__description title title--size-small">Имплантация за</p>
+        <div class="promotion__prices">
+          <span class="promotion__price">28 000 ₽</span>
+        </div>
+
+        <div class="promotion__offer">
+          <h3 class="promotion__offer-title">10% скидка</h3>
+          <p class="promotion__offer-description">На первичное лечение зубов</p>
+        </div>
+
+        <div class="promotion__ads">
+          <h3 class="promotion__ads-title">Акция!!!</h3>
+          <p class="promotion__ads-text title title--size-small">Профессиональная чистка зубов</p>
+          <p class="promotion__ads-price">3 500 ₽</p>
+          <p class="promotion__ads-date">До 07.07.2024</p>
+        </div>
+
+        <p class="promotion__consultation">Консультация специалистов <span class="promotion__hyphen">-</span>
+          <span>БЕСПЛАТНО</span>
+        </p>
+        <div class="promotion__wrapper">
+          <button class="promotion__button button button--primary">Записаться</button>
+          <ul class="promotion__socials socials">
+            <li class="socials__social">
+              <a class="socials__link socials__link--whatsapp" href="#wt">
+                <span class="visually-hidden">What's App</span>
+              </a>
+            </li>
+            <li class="socials__social">
+              <a class="socials__link socials__link--instagram" href="#inst">
+                <span class="visually-hidden">Instagram</span>
+              </a>
+            </li>
+            <li class="socials__social">
+              <button id="modal-button" class="socials__link socials__link--mail button" type="button">
+                <span class="visually-hidden">Email</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-doctors__map map">
+      <div class="map__container container">
+        <h2 class="visually-hidden">Карта</h2>
+        <iframe class="map__frame"
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa80510c64053d66c050d8774e4cee13323b1f6e645742141a2ca7f4ef9774bcb&amp;source=constructor"
+          width="100%" height="300" frameborder="0"></iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="page-doctors__footer footer">
+    <div class="footer__container">
+      <div class="footer__logo-wrapper">
+        <a class="footer__logo logo" href="index.html">
+          <img class="logo__image" src="images/clinic-logo.png" width="59" height="64" alt="Clinic Logo.">
+          <p class="logo__description">Стоматологическая<br>клиника Сангова</p>
+        </a>
+        <button id="modal-button-whatsapp" class="footer__button button button--primary button--whatsapp"
+          type="button">Написать в WhatsApp</button>
+          <button id="modal-button" class="footer__button button button--primary" type="button">Записаться</button>
+      </div>
+      <address class="footer__address address">
+        <ul class="address__list address__list--direction address__list--color">
+          <li class="address__item address__item--color address__item--map">
+            <p>г. Новосибирск, ул. Советская, д. 46/2</p>
+          </li>
+          <li class="address__item address__item--color address__item--clock">
+            <p>Ежедневно с 9:00 до 21:00</p>
+          </li>
+          <li class="address__item address__item--color address__item--tel">
+            <a href="tel:+73832093255">+7(383)2093255</a>
+          </li>
+          <li class="address__item address__item--color address__item--tel">
+            <a href="tel:+79639456363">+7(963)9456363</a>
+          </li>
+        </ul>
+
+        <a class="address__eye address__eye--color" href="#">
+          <span class="address__eye-text">Версия для слабовидящих</span>
+        </a>
+
+        <ul class="address__socials socials">
+          <li class="socials__social">
+            <a class="socials__link socials__link--color socials__link--whatsapp" href="https://wa.me/+79639456363">
+              <span class="visually-hidden">What's App</span>
+            </a>
+          </li>
+          <li class="socials__social">
+            <a class="socials__link socials__link--color socials__link--instagram"
+              href="https://www.instagram.com/sangov_clinic">
+              <span class="visually-hidden">Instagram</span>
+            </a>
+          </li>
+          <li class="socials__social">
+            <button id="modal-button" class="socials__link socials__link--color socials__link--mail button" type="button">
+              <span class="visually-hidden">Email</span>
+            </button>
+          </li>
+        </ul>
+      </address>
+      <div class="footer__bottom">
+        <div class="footer__menu-wrapper menu-wrapper">
+          <ul class="menu-wrapper__list menu-wrapper__list--column menu">
+            <li class="menu__item">
+              <a href="services.html">Услуги</a>
+            </li>
+            <li class="menu__item">
+              <a href="prices.html">Цены</a>
+            </li>
+            <li class="menu__item">
+              <a href="our-works.html">Наши работы</a>
+            </li>
+            <li class="menu__item">
+              <a href="our-doctors.html">Врачи</a>
+            </li>
+            <li class="menu__item">
+              <a href="about.html">О нас</a>
+            </li>
+            <li class="menu__item">
+              <a href="contacts.html">Контакты</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__cards">
+      <img class="footer__image" src="images/cards.png" width="275" height="169" alt="Способы оплаты.">
+    </div>
+  </footer>
+
+  <div id="modal" class="request request--modal">
+    <div class="request__wrapper container">
+      <h2 class="request__title title">Свяжитесь с нами</h2>
+      <form class="request__form" method="post" action="">
+        <label class="request__control">
+          <input class="request__input" type="text" name="name" placeholder="Имя">
+        </label>
+        <label class="request__control">
+          <input class="request__input" type="number" name="tel" placeholder="+7 999 999 99 99">
+        </label>
+        <button id="modal-submit-button" class="request__button button button--primary" type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-whatsapp" class="request request--whatsapp">
+    <div class="request__wrapper container">
+      <h2 class="request__title title">Свяжитесь с нами</h2>
+      <form class="request__form" method="post" action="#">
+        <label class="request__control">
+          <input class="request__input" type="text" name="name" placeholder="Имя">
+        </label>
+        <label class="request__control">
+          <input class="request__input" type="number" name="tel" placeholder="+7 999 999 99 99">
+        </label>
+        <button id="modal-whatsapp-submit-button"
+          class="request__button request__button--whatsapp button button--primary" type="submit">Получить
+          предложение в вотсап</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>

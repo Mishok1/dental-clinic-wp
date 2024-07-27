@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html class="page-services" lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Услуги</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preload" href="#" type="font/woff2" as="font">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script type="module" src="scripts/index.js" defer></script>
+</head>
+
+<body class="page-services__body">
+  <header class="page-services__header header">
+    <div class="header__container container">
+      <address class="header__address address">
+        <ul class="address__list">
+          <li class="address__item address__item--map">
+            <p>г. Новосибирск, ул. Советская, д. 46/2</p>
+          </li>
+          <li class="address__item address__item--clock">
+            <p>Ежедневно с 9:00 до 21:00</p>
+          </li>
+          <li class="address__item address__item--tel">
+            <a href="tel:+73832093255">+7(383)2093255</a>
+          </li>
+          <li class="address__item address__item--tel">
+            <a href="tel:+79639456363">+7(963)9456363</a>
+          </li>
+        </ul>
+
+        <a class="address__eye" href="#">
+          <span class="address__eye-text address__eye-text--hidden">Версия для слабовидящих</span>
+        </a>
+
+        <ul class="address__socials socials">
+          <li class="socials__social ">
+            <a class="socials__link socials__link--whatsapp" href="https://wa.me/+79639456363">
+              <span class="visually-hidden">What's App</span>
+            </a>
+          </li>
+          <li class="socials__social">
+            <a class="socials__link socials__link--instagram" href="https://www.instagram.com/sangov_clinic">
+              <span class="visually-hidden">Instagram</span>
+            </a>
+          </li>
+          <li class="socials__social">
+            <button id="modal-button" class="socials__link socials__link--mail button" type="button">
+              <span class="visually-hidden">Email</span>
+            </button>
+          </li>
+        </ul>
+      </address>
+
+      <div class="header__bottom">
+        <a class="header__logo logo" href="index.html">
+          <img class="logo__image" src="images/clinic-logo.png" width="59" height="64" alt="Clinic Logo.">
+          <p class="logo__description">Стоматологическая<br>клиника Сангова</p>
+        </a>
+
+        <div class="header__menu-wrapper menu-wrapper">
+          <ul class="menu-wrapper__list menu">
+            <li class="menu__item">
+              <a class="menu__link" href="services.html">Услуги</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="prices.html">Цены</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="our-works.html">Наши работы</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="our-doctors.html">Врачи</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="about.html">О нас</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="contacts.html">Контакты</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="menu-wrapper__search">
+          <form class="menu-wrapper__form" action="#" method="post">
+            <label>
+              <input class="menu-wrapper__input" type="text" name="search" placeholder="Поиск">
+            </label>
+          </form>
+          <button id="modal-button" class="menu-wrapper__button button button--primary"
+            type="button">Записаться</button>
+        </div>
+
+        <button class="header__mobile-button button" type="button">
+          <span class="visually-hidden">Кнопка открытыя меню</span>
+        </button>
+
+      </div>
+
+
+      <div class="header__mobile mobile">
+        <ul class="mobile__menu menu">
+          <li class="menu__item">
+            <a class="menu__link" href="services.html">Услуги</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="prices.html">Цены</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="our-works.html">Наши работы</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="our-doctors.html">Врачи</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="about.html">О нас</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="contacts.html">Контакты</a>
+          </li>
+        </ul>
+        <address class="mobile__address address">
+          <ul class="mobile__address-list address__list">
+            <li class="mobile__address-item address__item address__item--map">
+              <p>г. Новосибирск, ул. Советская, д. 46/2</p>
+            </li>
+            <li class="address__item address__item--clock">
+              <p>Ежедневно с 9:00 до 21:00</p>
+            </li>
+            <li class="address__item address__item--tel">
+              <a href="tel:+73832093255">+7(383)2093255</a>
+            </li>
+            <li class="address__item address__item--tel">
+              <a href="tel:+79639456363">+7(963)9456363</a>
+            </li>
+          </ul>
+
+          <ul class="socials">
+            <li class="socials__social ">
+              <a class="socials__link socials__link--whatsapp" href="https://wa.me/+79639456363">
+                <span class="visually-hidden">What's App</span>
+              </a>
+            </li>
+            <li class="socials__social">
+              <a class="socials__link socials__link--instagram" href="https://www.instagram.com/sangov_clinic">
+                <span class="visually-hidden">Instagram</span>
+              </a>
+            </li>
+            <li class="socials__social">
+              <button id="modal-button" class="socials__link socials__link--mail button" type="button">
+                <span class="visually-hidden">Email</span>
+              </button>
+            </li>
+          </ul>
+        </address>
+
+        <div class="mobile__search">
+          <button id="modal-button" class="mobile__button button button--primary" type="button">Записаться</button>
+          <form class="mobile__form" action="#" method="post">
+            <label>
+              <input class="mobile__input" type="text" name="search" placeholder="Поиск">
+            </label>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+
+  </header>
+
+  <main class="page-services__main">
+    <h1 class="visually-hidden">Услуги</h1>
+
+    <section class="page-services__promo promo">
+      <div class="promo__container container">
+        <div class="promo__wrapper">
+          <h2 class="promo__title title title--secondary-color">Услуги</h2>
+          <p class="promo__text">В нашей стоматологической клинике мы предоставляем полный спектр
+            услуг для здоровья и красоты вашей улыбки</p>
+          <button id="modal-button" class="promo__button button button--primary" type="button">Записаться</button>
+        </div>
+        <picture class="promo__picture promo__picture--order">
+          <source media="(min-width: 1440px)" type="image/png" srcset="images/doctor-funny-desktop.png" width="582"
+            height="358">
+          <img class="promo__image" src="images/doctor-funny.png" width="335" height="250" alt="Чистка зубов.">
+        </picture>
+      </div>
+    </section>
+
+    <section class="page-services__orthodontics-0 orthodontics">
+      <div class="orthodontics__container container">
+        <h2 class="orthodontics__title title">Ортодонтия</h2>
+
+        <ul class="orthodontics__list orthodontics__list--right-background">
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Первичная консультация</h3>
+            <p class="orthodontics__description">Получите профессиональную оценку состояния ваших зубов и десен. Наши
+              специалисты разработают индивидуальный план лечения и ответят на все ваши вопросы.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Брекет-система Damon Q</h3>
+            <p class="orthodontics__description">Современные и эффективные брекет-системы для комфортного и быстрого
+              исправления прикуса.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item orthodontics__item--image orthodontics__item--big">
+            <picture class="orthodontics__picture">
+              <source media="(min-width: 1440px)" type="image/png" srcset="images/orthodontics-desktop.png" width="786"
+                height="271">
+              <img class="orthodontics__image" width="335" height="295" src="images/orthodontics.png" alt="">
+            </picture>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="page-services__orthodontics-1 orthodontics">
+      <div class="orthodontics__container container">
+        <h2 class="orthodontics__title title">Ортодонтия</h2>
+
+        <ul class="orthodontics__list orthodontics__list--left-background">
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Первичная консультация</h3>
+            <p class="orthodontics__description">Получите профессиональную оценку состояния ваших зубов и десен. Наши
+              специалисты разработают индивидуальный план лечения и ответят на все ваши вопросы.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Брекет-система Damon Q</h3>
+            <p class="orthodontics__description">Современные и эффективные брекет-системы для комфортного и быстрого
+              исправления прикуса.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item orthodontics__item--image orthodontics__item--small">
+            <picture class="orthodontics__picture">
+              <source media="(min-width: 1440px)" type="image/png" srcset="images/orthodontics-desktop.png" width="786"
+                height="271">
+              <img class="orthodontics__image" width="335" height="295" src="images/orthodontics.png" alt="">
+            </picture>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="page-services__orthodontics-2 orthodontics">
+      <div class="orthodontics__container container">
+        <h2 class="orthodontics__title title">Ортодонтия</h2>
+
+        <ul class="orthodontics__list orthodontics__list--center-background">
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Первичная консультация</h3>
+            <p class="orthodontics__description">Получите профессиональную оценку состояния ваших зубов и десен. Наши
+              специалисты разработают индивидуальный план лечения и ответят на все ваши вопросы.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Брекет-система Damon Q</h3>
+            <p class="orthodontics__description">Современные и эффективные брекет-системы для комфортного и быстрого
+              исправления прикуса.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="page-services__orthodontics-3 orthodontics">
+      <div class="orthodontics__container container">
+        <h2 class="orthodontics__title title">Ортодонтия</h2>
+
+        <ul class="orthodontics__list">
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Первичная консультация</h3>
+            <p class="orthodontics__description">Получите профессиональную оценку состояния ваших зубов и десен. Наши
+              специалисты разработают индивидуальный план лечения и ответят на все ваши вопросы.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Брекет-система Damon Q</h3>
+            <p class="orthodontics__description">Современные и эффективные брекет-системы для комфортного и быстрого
+              исправления прикуса.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="page-services__orthodontics-4 orthodontics">
+      <div class="orthodontics__container container">
+        <h2 class="orthodontics__title title">Ортодонтия</h2>
+
+        <ul class="orthodontics__list  orthodontics__list--middle-background">
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Первичная консультация</h3>
+            <p class="orthodontics__description">Получите профессиональную оценку состояния ваших зубов и десен. Наши
+              специалисты разработают индивидуальный план лечения и ответят на все ваши вопросы.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Брекет-система Damon Q</h3>
+            <p class="orthodontics__description">Современные и эффективные брекет-системы для комфортного и быстрого
+              исправления прикуса.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item orthodontics__item--image orthodontics__item--small">
+            <picture class="orthodontics__picture">
+              <source media="(min-width: 1440px)" type="image/png" srcset="images/orthodontics-desktop.png" width="786"
+                height="271">
+              <img class="orthodontics__image" width="335" height="295" src="images/orthodontics.png" alt="">
+            </picture>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="page-services__orthodontics-5 orthodontics">
+      <div class="orthodontics__container container">
+        <h2 class="orthodontics__title title">Ортодонтия</h2>
+
+        <ul class="orthodontics__list orthodontics__list--left-background orthodontics__list--left-background-bottom">
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Первичная консультация</h3>
+            <p class="orthodontics__description">Получите профессиональную оценку состояния ваших зубов и десен. Наши
+              специалисты разработают индивидуальный план лечения и ответят на все ваши вопросы.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Брекет-система Damon Q</h3>
+            <p class="orthodontics__description">Современные и эффективные брекет-системы для комфортного и быстрого
+              исправления прикуса.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item orthodontics__item--image orthodontics__item--small">
+            <picture class="orthodontics__picture">
+              <source media="(min-width: 1440px)" type="image/png" srcset="images/orthodontics-desktop.png" width="786"
+                height="271">
+              <img class="orthodontics__image" width="335" height="295" src="images/orthodontics.png" alt="">
+            </picture>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="page-services__orthodontics-6 orthodontics">
+      <div class="orthodontics__container container">
+        <h2 class="orthodontics__title title">Ортодонтия</h2>
+
+        <ul class="orthodontics__list">
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Первичная консультация</h3>
+            <p class="orthodontics__description">Получите профессиональную оценку состояния ваших зубов и десен. Наши
+              специалисты разработают индивидуальный план лечения и ответят на все ваши вопросы.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Брекет-система Damon Q</h3>
+            <p class="orthodontics__description">Современные и эффективные брекет-системы для комфортного и быстрого
+              исправления прикуса.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="page-services__orthodontics-7 orthodontics">
+      <div class="orthodontics__container container">
+        <h2 class="orthodontics__title title">Ортодонтия</h2>
+
+        <ul class="orthodontics__list">
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Первичная консультация</h3>
+            <p class="orthodontics__description">Получите профессиональную оценку состояния ваших зубов и десен. Наши
+              специалисты разработают индивидуальный план лечения и ответят на все ваши вопросы.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Брекет-система Damon Q</h3>
+            <p class="orthodontics__description">Современные и эффективные брекет-системы для комфортного и быстрого
+              исправления прикуса.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item">
+            <h3 class="orthodontics__subtitle title title--size-small">Диагностическая консультация</h3>
+            <p class="orthodontics__description">Комплексное обследование зубов и десен с использованием современных
+              диагностических методов. Получите точный диагноз и рекомендации по дальнейшему лечению.</p>
+            <button id="modal-button" class="orthodontics__button button button--primary"
+              type="button">Записаться</button>
+          </li>
+          <li class="orthodontics__item orthodontics__item--image orthodontics__item--small">
+            <picture class="orthodontics__picture">
+              <source media="(min-width: 1440px)" type="image/png" srcset="images/orthodontics-desktop.png" width="786"
+                height="271">
+              <img class="orthodontics__image" width="335" height="295" src="images/orthodontics.png" alt="">
+            </picture>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="page-services__questions questions">
+      <div class="questions__container container">
+        <h2 class="questions__title title">Часто задаваемые вопросы</h2>
+        <ul class="questions__list">
+          <li id="questions-item" class="questions__item">
+            <p class="questions__text">Здравствуйте. Вы доставляете в Новосибирск?</p>
+            <p id="questions-answer" class="questions__answer">0LoLorem ipsum dolor sit amet consectetur adipisicing elit. Velit, ab inventore! Quaerat nulla eos cumque iusto molestiae voluptates minima, magnam dolorum cum enim alias ratione sit consectetur, sapiente amet delectus.</p>
+          </li>
+          <li id="questions-item" class="questions__item">
+            <p class="questions__text">Здравствуйте. Вы доставляете в Новосибирск?</p>
+            <p id="questions-answer" class="questions__answer">1LoLorem ipsum dolor sit amet consectetur adipisicing elit. Velit, ab inventore! Quaerat nulla eos cumque iusto molestiae voluptates minima, magnam dolorum cum enim alias ratione sit consectetur, sapiente amet delectus.</p>
+          </li>
+          <li id="questions-item" class="questions__item">
+            <p class="questions__text">Здравствуйте. Вы доставляете в Новосибирск?</p>
+            <p id="questions-answer" class="questions__answer">2LoLorem ipsum dolor sit amet consectetur adipisicing elit. Velit, ab inventore! Quaerat nulla eos cumque iusto molestiae voluptates minima, magnam dolorum cum enim alias ratione sit consectetur, sapiente amet delectus.</p>
+          </li>
+          <li id="questions-item" class="questions__item">
+            <p class="questions__text">Добрый день. По безналичному расчету работаете?</p>
+            <p id="questions-answer" class="questions__answer">3LoLorem ipsum dolor sit amet consectetur adipisicing elit. Velit, ab inventore! Quaerat nulla eos cumque iusto molestiae voluptates minima, magnam dolorum cum enim alias ratione sit consectetur, sapiente amet delectus.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="page-services__review review">
+      <div class="review__container">
+        <h2 class="review__title title">Отзывы</h2>
+        <!-- slider -->
+        <ul class="review__list">
+          <li class="review__item">
+            <p class="review__date">20.05.2024</p>
+            <h3 class="review__name">​Федор Ермолаев</h3>
+            <div class="review__stars"></div>
+            <p>Была нестерпимая острая боль (абсцесс 8ки). Обзвонил клиник 25, и эта единственная где меня смогли
+              принять через 40 минут. Снимок, обезболивание, быстрое и качественное удаление....</p>
+            <button class="review__button button" type="button">Читать целиком</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="page-services__consultation consultation">
+      <div class="consultation__container">
+        <div class="consultation__wrapper">
+          <h2 class="consultation__title title title--size-small">Записаться на консультацию</h2>
+          <p class="consultation__text">Получите профессиональную помощь от наших экспертов, записавшись на
+            консультацию.</p>
+          <form class="consultation__form" method="post" action="#">
+            <label class="consultation__control">
+              <input class="consultation__input" type="text" name="name" placeholder="Имя">
+            </label>
+            <label class="consultation__control">
+              <input class="consultation__input" type="number" name="tel" placeholder="+7 999 999 99 99">
+            </label>
+            <button class="consultation__button button button--primary" type="submit">Записаться</button>
+          </form>
+        </div>
+        <picture class="consultation__picture">
+          <source media="(min-width: 1440px)" type="image/png" srcset="images/doctor-smile-desktop.png" width="582"
+            height="358">
+          <img class="consultation__image" src="images/doctor-smile.png" width="357" height="250" alt="Чистка зубов.">
+        </picture>
+      </div>
+    </section>
+
+    <section class="page-services__team team">
+      <div class="team__container container">
+        <h2 class="team__title title title--color">Наши врачи</h2>
+
+        <div class="swiper1 swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="team__swiper-list">
+                <div class="team__item">
+                  <img class="team__image" src="images/doctor-sangov.png" width="335" height="250" alt="Доктор Сангов.">
+                  <h3 class="team__subtitle"><span class="title title--size-small title--color">Сангов</span>Абдулло
+                    Мамашарифович</h3>
+                  <p class="team__text">Главный врач стоматолог, хирург-имплантолог, ортопед, терапевт<br><br>Ксения
+                    Владимировна-специализируется на лечении кариеса,художественной реставрации жевательной и
+                    центральной
+                    группы зубов, эндодонтическом лечении. Стоматологический прием проводит только под микроскопом,
+                    в период лечения ведется фотопротокол.</p>
+                  <ul class="team__socials socials">
+                    <li class="socials__social">
+                      <a class="socials__link socials__link--instagram socials__link--color" target="_blank"
+                        rel="noopener noreferrer" href="https://www.instagram.com/dr.sangov/">
+                        <span class="visually-hidden">Instagram</span>
+                      </a>
+                    </li>
+                    <li class="socials__social">
+                      <a class="socials__link socials__link--prodoctorov socials__link--color" target="_blank"
+                        rel="noopener noreferrer" href="https://prodoctorov.ru/novosibirsk/vrach/693318-sangov/">
+                        <span class="visually-hidden">Продокторов</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="team__item">
+                  <img class="team__image" src="images/pasternak.png" width="335" height="250" alt="Доктор Сангов.">
+                  <h3 class="team__subtitle"><span class="title title--size-small title--color">Пастернак</span>Ксения
+                    Владимировна </h3>
+                  <p class="team__text">Врач стоматолог-терапевт
+                    микроскопист, ортопед<br><br>Ксения Владимировна-специализируется на лечении кариеса,художественной
+                    реставрации жевательной и центральной группы зубов, эндодонтическом лечении. Стоматологический прием
+                    проводит только под микроскопом,
+                    в период лечения ведется фотопротокол.</p>
+                </div>
+                <div class="team__item">
+                  <img class="team__image" src="images/masrurov.png" width="335" height="250" alt="Доктор Сангов.">
+                  <h3 class="team__subtitle"><span class="title title--size-small title--color">Масруров</span>Шахриер
+                    Гафурович</h3>
+                  <p class="team__text">Врач стоматолог общей практики<br><br>Специализируется на составлении
+                    индивидуального комплексного плана лечения, лечении кариеса и его осложнений, профессиональная
+                    чистка
+                    зубов. Делает реставрации жевательной группы зубов. Удаление зубов.</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="team__swiper-list">
+                <div class="team__item">
+                  <img class="team__image" src="images/doctor-sangov.png" width="335" height="250" alt="Доктор Сангов.">
+                  <h3 class="team__subtitle"><span class="title title--size-small title--color">Сангов</span>Абдулло
+                    Мамашарифович</h3>
+                  <p class="team__text">Главный врач стоматолог, хирург-имплантолог, ортопед, терапевт<br><br>Ксения
+                    Владимировна-специализируется на лечении кариеса,художественной реставрации жевательной и
+                    центральной
+                    группы зубов, эндодонтическом лечении. Стоматологический прием проводит только под микроскопом,
+                    в период лечения ведется фотопротокол.</p>
+                  <ul class="team__socials socials">
+                    <li class="socials__social">
+                      <a class="socials__link socials__link--instagram socials__link--color" target="_blank"
+                        rel="noopener noreferrer" href="https://www.instagram.com/dr.sangov/">
+                        <span class="visually-hidden">Instagram</span>
+                      </a>
+                    </li>
+                    <li class="socials__social">
+                      <a class="socials__link socials__link--prodoctorov socials__link--color" target="_blank"
+                        rel="noopener noreferrer" href="https://prodoctorov.ru/novosibirsk/vrach/693318-sangov/">
+                        <span class="visually-hidden">Продокторов</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="team__item">
+                  <img class="team__image" src="images/pasternak.png" width="335" height="250" alt="Доктор Сангов.">
+                  <h3 class="team__subtitle"><span class="title title--size-small title--color">Пастернак</span>Ксения
+                    Владимировна </h3>
+                  <p class="team__text">Врач стоматолог-терапевт
+                    микроскопист, ортопед<br><br>Ксения Владимировна-специализируется на лечении кариеса,художественной
+                    реставрации жевательной и центральной группы зубов, эндодонтическом лечении. Стоматологический прием
+                    проводит только под микроскопом,
+                    в период лечения ведется фотопротокол.</p>
+                </div>
+                <div class="team__item">
+                  <img class="team__image" src="images/masrurov.png" width="335" height="250" alt="Доктор Сангов.">
+                  <h3 class="team__subtitle"><span class="title title--size-small title--color">Масруров</span>Шахриер
+                    Гафурович</h3>
+                  <p class="team__text">Врач стоматолог общей практики<br><br>Специализируется на составлении
+                    индивидуального комплексного плана лечения, лечении кариеса и его осложнений, профессиональная
+                    чистка
+                    зубов. Делает реставрации жевательной группы зубов. Удаление зубов.</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="team__swiper-list">
+                <div class="team__item">
+                  <img class="team__image" src="images/doctor-sangov.png" width="335" height="250" alt="Доктор Сангов.">
+                  <h3 class="team__subtitle"><span class="title title--size-small title--color">Сангов</span>Абдулло
+                    Мамашарифович</h3>
+                  <p class="team__text">Главный врач стоматолог, хирург-имплантолог, ортопед, терапевт<br><br>Ксения
+                    Владимировна-специализируется на лечении кариеса,художественной реставрации жевательной и
+                    центральной
+                    группы зубов, эндодонтическом лечении. Стоматологический прием проводит только под микроскопом,
+                    в период лечения ведется фотопротокол.</p>
+                  <ul class="team__socials socials">
+                    <li class="socials__social">
+                      <a class="socials__link socials__link--instagram socials__link--color" target="_blank"
+                        rel="noopener noreferrer" href="https://www.instagram.com/dr.sangov/">
+                        <span class="visually-hidden">Instagram</span>
+                      </a>
+                    </li>
+                    <li class="socials__social">
+                      <a class="socials__link socials__link--prodoctorov socials__link--color" target="_blank"
+                        rel="noopener noreferrer" href="https://prodoctorov.ru/novosibirsk/vrach/693318-sangov/">
+                        <span class="visually-hidden">Продокторов</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="team__item">
+                  <img class="team__image" src="images/pasternak.png" width="335" height="250" alt="Доктор Сангов.">
+                  <h3 class="team__subtitle"><span class="title title--size-small title--color">Пастернак</span>Ксения
+                    Владимировна </h3>
+                  <p class="team__text">Врач стоматолог-терапевт
+                    микроскопист, ортопед<br><br>Ксения Владимировна-специализируется на лечении кариеса,художественной
+                    реставрации жевательной и центральной группы зубов, эндодонтическом лечении. Стоматологический прием
+                    проводит только под микроскопом,
+                    в период лечения ведется фотопротокол.</p>
+                </div>
+                <div class="team__item">
+                  <img class="team__image" src="images/masrurov.png" width="335" height="250" alt="Доктор Сангов.">
+                  <h3 class="team__subtitle"><span class="title title--size-small title--color">Масруров</span>Шахриер
+                    Гафурович</h3>
+                  <p class="team__text">Врач стоматолог общей практики<br><br>Специализируется на составлении
+                    индивидуального комплексного плана лечения, лечении кариеса и его осложнений, профессиональная
+                    чистка
+                    зубов. Делает реставрации жевательной группы зубов. Удаление зубов.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-container">
+            <div class="swiper-button-prev1"></div>
+            <div class="swiper-pagination1"></div>
+            <div class="swiper-button-next1"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="page-services__map map">
+      <div class="map__container container">
+        <h2 class="visually-hidden">Карта</h2>
+        <iframe class="map__frame"
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa80510c64053d66c050d8774e4cee13323b1f6e645742141a2ca7f4ef9774bcb&amp;source=constructor"
+          width="100%" height="300" frameborder="0"></iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="page-services__footer footer">
+    <div class="footer__container">
+      <div class="footer__logo-wrapper">
+        <a class="footer__logo logo" href="index.html">
+          <img class="logo__image" src="images/clinic-logo.png" width="59" height="64" alt="Clinic Logo.">
+          <p class="logo__description">Стоматологическая<br>клиника Сангова</p>
+        </a>
+        <button id="modal-button-whatsapp" class="footer__button button button--primary button--whatsapp"
+          type="button">Написать в WhatsApp</button>
+          <button id="modal-button" class="footer__button button button--primary" type="button">Записаться</button>
+      </div>
+      <address class="footer__address address">
+        <ul class="address__list address__list--direction address__list--color">
+          <li class="address__item address__item--color address__item--map">
+            <p>г. Новосибирск, ул. Советская, д. 46/2</p>
+          </li>
+          <li class="address__item address__item--color address__item--clock">
+            <p>Ежедневно с 9:00 до 21:00</p>
+          </li>
+          <li class="address__item address__item--color address__item--tel">
+            <a href="tel:+73832093255">+7(383)2093255</a>
+          </li>
+          <li class="address__item address__item--color address__item--tel">
+            <a href="tel:+79639456363">+7(963)9456363</a>
+          </li>
+        </ul>
+
+        <a class="address__eye address__eye--color" href="#">
+          <span class="address__eye-text">Версия для слабовидящих</span>
+        </a>
+
+        <ul class="address__socials socials">
+          <li class="socials__social">
+            <a class="socials__link socials__link--color socials__link--whatsapp" href="https://wa.me/+79639456363">
+              <span class="visually-hidden">What's App</span>
+            </a>
+          </li>
+          <li class="socials__social">
+            <a class="socials__link socials__link--color socials__link--instagram"
+              href="https://www.instagram.com/sangov_clinic">
+              <span class="visually-hidden">Instagram</span>
+            </a>
+          </li>
+          <li class="socials__social">
+            <button id="modal-button" class="socials__link socials__link--color socials__link--mail button" type="button">
+              <span class="visually-hidden">Email</span>
+            </button>
+          </li>
+        </ul>
+      </address>
+      <div class="footer__bottom">
+        <div class="footer__menu-wrapper menu-wrapper">
+          <ul class="menu-wrapper__list menu-wrapper__list--column menu">
+            <li class="menu__item">
+              <a href="services.html">Услуги</a>
+            </li>
+            <li class="menu__item">
+              <a href="prices.html">Цены</a>
+            </li>
+            <li class="menu__item">
+              <a href="our-works.html">Наши работы</a>
+            </li>
+            <li class="menu__item">
+              <a href="our-doctors.html">Врачи</a>
+            </li>
+            <li class="menu__item">
+              <a href="about.html">О нас</a>
+            </li>
+            <li class="menu__item">
+              <a href="contacts.html">Контакты</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__cards">
+      <img class="footer__image" src="images/cards.png" width="275" height="169" alt="Способы оплаты.">
+    </div>
+  </footer>
+
+  <div id="modal" class="request request--modal">
+    <div class="request__wrapper container">
+      <h2 class="request__title title">Свяжитесь с нами</h2>
+      <form class="request__form" method="post" action="">
+        <label class="request__control">
+          <input class="request__input" type="text" name="name" placeholder="Имя">
+        </label>
+        <label class="request__control">
+          <input class="request__input" type="number" name="tel" placeholder="+7 999 999 99 99">
+        </label>
+        <button id="modal-submit-button" class="request__button button button--primary" type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-whatsapp" class="request request--whatsapp">
+    <div class="request__wrapper container">
+      <h2 class="request__title title">Свяжитесь с нами</h2>
+      <form class="request__form" method="post" action="#">
+        <label class="request__control">
+          <input class="request__input" type="text" name="name" placeholder="Имя">
+        </label>
+        <label class="request__control">
+          <input class="request__input" type="number" name="tel" placeholder="+7 999 999 99 99">
+        </label>
+        <button id="modal-whatsapp-submit-button"
+          class="request__button request__button--whatsapp button button--primary" type="submit">Получить
+          предложение в вотсап</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>
