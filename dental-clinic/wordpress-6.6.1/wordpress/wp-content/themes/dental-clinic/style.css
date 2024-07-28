@@ -42,6 +42,15 @@ p {
   margin: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -187,7 +196,7 @@ input[type=number] {
 }
 
 .page-index__promo-0 {
-  margin: 0 0 40px;
+  margin: 0;
 }
 
 @media (min-width: 1440px) {
@@ -281,7 +290,7 @@ input[type=number] {
 }
 
 .page-index__promo-2 {
-  margin: 0 0 40px;
+  margin: 0;
 }
 
 @media (min-width: 1440px) {
@@ -1671,7 +1680,7 @@ input[type=number] {
 
 .promo__picture {
   position: relative;
-  top: -76px;
+  top: -60px;
   display: flex;
   justify-content: center;
   z-index: -1;
@@ -1705,6 +1714,7 @@ input[type=number] {
   border-radius: 16px;
   object-fit: cover;
   width: 100%;
+  height: 100%;
   object-position: top;
 }
 
@@ -1810,14 +1820,16 @@ input[type=number] {
   row-gap: 8px;
 }
 
-.services__text span:hover {
-  border-bottom: 1px solid #0347ae;
+.services__text p:hover {
   margin-bottom: -1px;
+  border-bottom: 1px solid #0347ae;
 }
 
 .services__image {
   border-radius: 16px;
   object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 @media (min-width: 1440px) {
@@ -1836,9 +1848,10 @@ input[type=number] {
 }
 
 @media (min-width: 1440px) {
-  .promotion__container picture {
+  .promotion__image {
     grid-column: 2/3;
     grid-row: 1/9;
+    height: 100%;
   }
 }
 
@@ -1855,6 +1868,7 @@ input[type=number] {
 
 .promotion__prices {
   display: flex;
+  align-items: center;
   margin-bottom: 24px;
 }
 
@@ -1893,11 +1907,14 @@ input[type=number] {
   border-radius: 32px;
   margin-bottom: 24px;
   width: 100%;
+  height: 100%;
+
 }
 
 @media (min-width: 1440px) {
   .promotion__image {
     margin: 0;
+    height: 100%;
   }
 }
 
@@ -2098,7 +2115,7 @@ input[type=number] {
 }
 
 .advantages__wrapper {
-  padding: 24px 16px 0;
+  padding: 24px 16px;
 }
 
 .advantages__subtitle {
@@ -2119,7 +2136,14 @@ input[type=number] {
 .advantages__image {
   object-fit: cover;
   width: 100%;
+  height: 100%;
   border-radius: 0 0 16px 16px;
+}
+
+@media (min-width: 1440px) {
+  .advantages__image {
+    height: unset;
+  }
 }
 
 .follow__title {
@@ -2199,6 +2223,11 @@ input[type=number] {
   }
 }
 
+/* .follow__item {
+  display: flex;
+  flex-direction: column;
+} */
+
 @media (min-width: 1440px) {
   .follow__item {
     width: 31.65%;
@@ -2212,17 +2241,6 @@ input[type=number] {
   border-radius: 16px;
 }
 
-@media (min-width: 1440px) {
-  .follow__image {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 16px;
-  }
-}
-
-.follow__text {
-  margin: 0;
-}
 
 .about {
   background-color: #fafafa;
@@ -2256,6 +2274,7 @@ input[type=number] {
   margin: 0 0 30px;
   display: block;
   width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: top;
   border-radius: 16px;
@@ -2300,6 +2319,7 @@ input[type=number] {
   .doctor__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 40px 28px auto auto 46px;
     gap: 24px 30px;
   }
 }
@@ -2317,6 +2337,10 @@ input[type=number] {
 
 .doctor__name {
   margin: 0 0 24px;
+  font-family: "Manrope-600", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28px;
 }
 
 @media (min-width: 1440px) {
@@ -2326,23 +2350,19 @@ input[type=number] {
   }
 }
 
-@media (min-width: 1440px) {
-  .doctor__picture {
-    grid-column: 2/3;
-    grid-row: 1/6;
-    margin: 0;
-  }
-}
-
 .doctor__image {
   margin: 0 0 24px;
   border-radius: 16px;
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
 @media (min-width: 1440px) {
   .doctor__image {
+    margin: 0;
+    grid-column: 2/3;
+    grid-row: 1/6;
     margin: 0;
   }
 }
@@ -2355,6 +2375,7 @@ input[type=number] {
   .doctor__description {
     grid-column: 1/2;
     margin: 0;
+    align-self: flex-start;
   }
 }
 
@@ -2371,6 +2392,7 @@ input[type=number] {
   .doctor__education {
     grid-column: 1/2;
     margin: 0;
+    align-self: flex-end;
   }
 }
 
@@ -2418,6 +2440,7 @@ input[type=number] {
   border-radius: 8px;
   width: 100%;
   object-fit: cover;
+  height: 100%;
 }
 
 .team {
@@ -2444,11 +2467,20 @@ input[type=number] {
   margin: 0 0 24px;
 }
 
-/* .team__slider {
+.team__slider {
   list-style-type: none;
   margin: 0;
   padding: 0;
-} */
+  display: flex;
+  flex-direction: column;
+  column-gap: 30px;
+}
+
+@media (min-width: 1440px) {
+  .team__slider {
+    flex-direction: row;
+  }
+} 
 
 .team__list {
   list-style-type: none;
@@ -2459,7 +2491,7 @@ input[type=number] {
   row-gap: 24px;
 }
 
-.team__swiper-list {
+/* .team__swiper-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -2467,7 +2499,7 @@ input[type=number] {
   flex-direction: column;
   row-gap: 24px;
   column-gap: 30px;
-}
+} */
 
 @media (min-width: 1440px) {
   .team__list {
@@ -2476,55 +2508,74 @@ input[type=number] {
     flex-flow: row wrap;
   }
 
-  .team__swiper-list {
+  /* .team__swiper-list {
     flex-direction: row;
-  }
+  } */
 }
 
+/* 
 @media (min-width: 1440px) {
   .team__list--with-button .team__item {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
+} */
+
+.team__item {
+  width: 100%;
 }
 
 @media (min-width: 1440px) {
   .team__item {
     width: 31.65%;
+    height: 100%;
   }
 }
+
 
 .team__image {
   border-radius: 16px;
   object-fit: cover;
   margin: 0 0 16px;
   width: 100%;
-  height: 400px;
+  height: 100%;
   object-position: top;
+}
+
+@media (min-width: 1440px) {
+  .team__image {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .team__subtitle {
   display: flex;
   flex-direction: column;
   row-gap: 8px;
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  font-family: "Manrope-600", sans-serif;
+  font-weight: 600;
   margin: 0 0 16px;
 }
 
 .team__subtitle span {
   color: inherit;
+  font-family: "Manrope-500", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
 }
 
 .team__text {
   margin: 0 0 16px;
 }
 
-.team__socials {
+/* .team__socials {
   margin: 0 0 16px;
-}
+} */
 
 .team__wrapper {
   display: flex;
@@ -3664,6 +3715,7 @@ input[type=number] {
   border-radius: 16px;
   object-fit: cover;
   width: 100%;
+  height: 100%;
 }
 
 .before-after__title {

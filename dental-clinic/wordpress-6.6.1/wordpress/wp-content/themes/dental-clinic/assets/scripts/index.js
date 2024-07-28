@@ -2,8 +2,6 @@
 
 import Swiper from '../vendor/swiper-11.1.7/package/swiper-bundle.min.mjs';
 
-// console.log(Swiper);
-console.log('helou');
 
 const swiper = new Swiper('.swiper0', {
   slidesPerView: 1,
@@ -28,10 +26,16 @@ const swiper = new Swiper('.swiper0', {
 });
 
 
+
 const swiper1 = new Swiper('.swiper1', {
   slidesPerView: 1,
   loop: true,
-  
+
+  // breakpoints: {
+  //   1440: {
+  //     spaceBetween: 30,
+  //   },
+  // },
 
   pagination: {
     el: '.swiper-pagination1',

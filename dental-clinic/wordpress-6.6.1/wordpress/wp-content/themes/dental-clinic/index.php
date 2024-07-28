@@ -120,38 +120,45 @@ get_header();
         <div class="most-popular__container container">
             <h2 class="most-popular__title title">Три самые популярные услуги</h2>
             <ul class="most-popular__list">
-                <li class="most-popular__item">
-                    <h3 class="most-popular__subtitle title title--size-small">Чистка зубов</h3>
-                    <p class="most-popular__price">3500₽</p>
-                    <button id="modal-button" class="most-popular__button button button--primary"
-                        type="button">Записаться</button>
-                    <img class="most-popular__image"
-                        src="<?php echo bloginfo("template_url"); ?>/assets/images/cleaning.svg" width="96" height="96"
-                        alt="Чистка.">
-                </li>
-                <li class="most-popular__item">
-                    <h3 class="most-popular__subtitle title title--size-small">Имплант</h3>
-                    <p class="most-popular__price">от 20000₽</p>
-                    <button id="modal-button" class="most-popular__button button button--primary"
-                        type="button">Записаться</button>
-                    <img class="most-popular__image"
-                        src="<?php echo bloginfo("template_url"); ?>/assets/images/implanting.svg" width="96"
-                        height="96" alt="Имплант.">
-                </li>
-                <li class="most-popular__item">
-                    <h3 class="most-popular__subtitle title title--size-small">Удаление</h3>
-                    <p class="most-popular__price">от 1500₽</p>
-                    <button id="modal-button" class="most-popular__button button button--primary"
-                        type="button">Записаться</button>
-                    <img class="most-popular__image"
-                        src="<?php echo bloginfo("template_url"); ?>/assets/images/deleting.svg" width="96" height="96"
-                        alt="Удаление.">
-                </li>
+
+
+                    <?php 
+                        $my_posts = get_posts( array(
+                            'numberposts' => 3,
+                            'category_name'    => 'most-popular-services',
+                            'orderby'     => 'date',
+                            'order'       => 'DESC',
+                            'post_type'   => 'post',
+                            'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                            ) );
+                            
+                            global $post;
+                            
+                            foreach( $my_posts as $post ){
+                                setup_postdata( $post );
+                                ?>
+
+
+                                <li class="most-popular__item">
+                                    <h3 class="most-popular__subtitle title title--size-small"><?php the_title(); ?></h3>
+                                    <p class="most-popular__price"><?php the_field('most-popular-services-price') ?></p>
+                                    <button id="modal-button" class="most-popular__button button button--primary"
+                                        type="button">Записаться</button>
+                                    <img class="most-popular__image" src="<?php the_field('most-popular-services-image') ?>" width="96" height="96" alt="Чистка.">
+                                </li>
+
+
+                        <?php
+                            }
+                            
+                            wp_reset_postdata();
+                    ?>
+
+
+               
             </ul>
         </div>
     </section>
-
-
 
     <section class="page-index__before-after before-after">
         <div class="before-after__container container">
@@ -206,17 +213,16 @@ get_header();
 
     <section class="page-index__promo-0 promo">
         <div class="promo__container container">
+            
             <div class="promo__wrapper">
-                <h2 class="promo__title title title--size-small"><?php the_field('promo0-title'); ?></h2>
-                <?php the_field('promo0-text'); ?>
+                <h2 class="promo__title title title--size-small"><?php the_field('promo-title'); ?></h2>
+                <?php the_field('promo-text'); ?>
                 <button id="modal-button" class="promo__button button button--primary">Записаться</button>
             </div>
-            <picture class="promo__picture">
-                <source media="(min-width: 1440px)" type="image/png"
-                    srcset="<?php the_field('promo0-image-desktop'); ?>" width="582" height="358">
-                <img class="promo__image" src="<?php the_field('promo0-image-mobile'); ?>" width="335" height="250"
-                    alt="Чистка зубов.">
-            </picture>
+            <div class="promo__picture">
+                <img class="promo__image" src="<?php the_field('promo-image'); ?>" width="335" height="250"
+                alt="Чистка зубов.">
+            </div>
         </div>
     </section>
 
@@ -224,98 +230,42 @@ get_header();
         <div class="services__container container">
             <h2 class="services__title title title--color">Услуги</h2>
             <ul class="services__list">
+
+            <?php 
+                        $my_posts = get_posts( array(
+                            'numberposts' => 8,
+                            'category_name'    => 'main-services',
+                            'orderby'     => 'date',
+                            'order'       => 'DESC',
+                            'post_type'   => 'post',
+                            'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                            ) );
+                            
+                            global $post;
+                            
+                            foreach( $my_posts as $post ){
+                                setup_postdata( $post );
+                                ?>
+
+
+                                <li class="services__item">
+                                    <h3 class="services__subtitle title title--size-small"><?php the_title(); ?></h3>
+                                    <div class="services__text">
+                                        <?php the_field('main-services-list') ?>
+                                    </div>
+                                </li>
+
+
+                            <?php
+                                // формат вывода the_title() ...
+                            }
+                            
+                            wp_reset_postdata();
+                            ?>
+
+
                 <li class="services__item">
-                    <h3 class="services__subtitle title title--size-small">Ортодонтия</h3>
-                    <p class="services__text">
-                        <span>Первичная консультация</span>
-                        <span>Диагностическая консультация</span>
-                        <span>Брекет-система Damon Q</span>
-                        <span>Активация брекет-системы</span>
-                        <span>Брекет-система H4</span>
-                        <span>Ортодонтические пластинки</span>
-                        <span>Элайнеры</span>
-                    </p>
-                </li>
-                <li class="services__item">
-                    <h3 class="services__subtitle title title--size-small">Детская стоматология</h3>
-                    <p class="services__text">
-                        <span>Консультации и диагностика полости рта</span>
-                        <span>Удаление зуба</span>
-                        <span>Лечение кариеса</span>
-                        <span>Лечение пульпита</span>
-                        <span>Профессиональная гигиена полости рта</span>
-                    </p>
-                </li>
-                <li class="services__item">
-                    <h3 class="services__subtitle title title--size-small">Терапевтическая стоматология</h3>
-                    <p class="services__text">
-                        <span>Профессиональная чистка зубов 4-х этапная</span>
-                        <span>Лечение кариеса</span>
-                        <span>Лечение пульпита</span>
-                        <span>Лечение периодонтита</span>
-                        <span>Лечение под микроскопом</span>
-                        <span>Удаление инструментов из корневых каналов</span>
-                    </p>
-                </li>
-                <li class="services__item">
-                    <h3 class="services__subtitle title title--size-small">Ортопедическая стоматология</h3>
-                    <p class="services__text">
-                        <span>Протезы с фиксацией на имплантах</span>
-                        <span>Керамическая коронка Emax</span>
-                        <span>Керамическая коронка из Диоксид циркония</span>
-                        <span>Съемный протез</span>
-                        <span>Бюгельный протез</span>
-                        <span>Снятие и фиксация коронки</span>
-                        <span>Виниры</span>
-                        <span>Вкладки</span>
-                        <span>Мосты</span>
-                    </p>
-                </li>
-                <li class="services__item">
-                    <h3 class="services__subtitle title title--size-small">Экстренная стоматологическая помощь</h3>
-                    <p class="services__text">
-                        <span>Помощь при острой зубной боли</span>
-                        <span>Помощь при зубном абсцессе</span>
-                        <span>Реставрация сломанного или выбитого зуба</span>
-                        <span>Удаление зуба мудрости</span>
-                        <span>Удаление зубов любой сложности</span>
-                    </p>
-                </li>
-                <li class="services__item">
-                    <h3 class="services__subtitle title title--size-small">Имплантация</h3>
-                    <p class="services__text">
-                        <span>Установка импланта</span>
-                        <span>Синус-лифтинг открытый/закрытый</span>
-                        <span>Пластика десны</span>
-                        <span>Пластика десны</span>
-                        <span>Удаление импланта</span>
-                        <span>Имплантация ALL ON 4</span>
-                        <span>Имплантация ALL ON 6</span>
-                        <span>Одномоментная имплантация</span>
-                    </p>
-                </li>
-                <li class="services__item">
-                    <h3 class="services__subtitle title title--size-small">Хирургическая стоматология</h3>
-                    <p class="services__text">
-                        <span>Удаление зуба</span>
-                        <span>Удаление зуба мудрости</span>
-                        <span>Пластика уздечки</span>
-                    </p>
-                </li>
-                <li class="services__item">
-                    <h3 class="services__subtitle title title--size-small">Rg-диагностика</h3>
-                    <p class="services__text">
-                        <span>Прицельный снимок зуба</span>
-                        <span>Фотопротокол зубов</span>
-                        <span>3D сканирование зубов</span>
-                        <span>Диагностика под микроскопом </span>
-                        <span>Составление плана лечения с КТ</span>
-                    </p>
-                </li>
-                <li class="services__item">
-                    <img class="services__image"
-                        src="<?php echo bloginfo("template_url"); ?>/assets/images/doctor-working.png" width="335"
-                        height="300" alt="Доктор работает.">
+                    <img class="services__image" src="<?php echo bloginfo("template_url"); ?>/assets/images/doctor-working.png" width="335" height="300" alt="Доктор работает.">
                 </li>
             </ul>
         </div>
@@ -324,36 +274,48 @@ get_header();
     <section class="page-index__promotion promotion">
         <div class="promotion__container container">
             <h2 class="visually-hidden">Акция</h2>
-            <p class="promotion__description title title--size-small">Восстановление винирами и коронками<br> за
-                один день
-            </p>
+            <p class="promotion__description title title--size-small"><?php the_field('promotion-title-1') ?></p>
             <div class="promotion__prices">
-                <span class="promotion__price">26 500 ₽</span>
-                <span class="promotion__old-price">35 000 ₽</span>
+                <div class="promotion__price">
+                    <?php the_field('promotion-new-price') ?>
+                </div>
+                <div class="promotion__old-price">
+                    <?php the_field('promotion-old-price') ?>
+                </div>
             </div>
-            <picture>
-                <source media="(min-width: 1440px)" type="image/jpg"
-                    srcset="<?php echo bloginfo("template_url"); ?>/assets/images/doctor-watching-desktop.jpg"
-                    width="582" height="810">
-                <img class="promotion__image"
-                    src="<?php echo bloginfo("template_url"); ?>/assets/images/doctor-watching.png" width="335"
-                    height="300" alt="Доктор смотрит.">
-            </picture>
-            <p class="promotion__description title title--size-small">Имплантация за</p>
+            <img class="promotion__image" src="<?php the_field('promotion-image') ?>" width="335" height="300" alt="Доктор смотрит.">
+            <div class="promotion__description title title--size-small">
+                <?php the_field('promotion-title-2') ?>
+            </div>
+
             <div class="promotion__prices">
-                <span class="promotion__price">28 000 ₽</span>
+                <div class="promotion__price">
+                    <?php the_field('promotion-price') ?>
+                </div>
             </div>
 
             <div class="promotion__offer">
-                <h3 class="promotion__offer-title">10% скидка</h3>
-                <p class="promotion__offer-description">На первичное лечение зубов</p>
+                <h3 class="promotion__offer-title">
+                    <?php the_field('promotion-sale') ?>
+                </h3>
+                <div class="promotion__offer-description">
+                    <?php the_field('promotion-sale-description') ?>
+                </div>
             </div>
 
             <div class="promotion__ads">
-                <h3 class="promotion__ads-title">Акция!!!</h3>
-                <p class="promotion__ads-text title title--size-small">Профессиональная чистка зубов</p>
-                <p class="promotion__ads-price">3 500 ₽</p>
-                <p class="promotion__ads-date">До 07.07.2024</p>
+                <h3 class="promotion__ads-title">
+                    <?php the_field('promotion-promotion-title') ?>
+                </h3>
+                <div class="promotion__ads-text title title--size-small">
+                    <?php the_field('promotion-promotion-description') ?>
+                </div>
+                <div class="promotion__ads-price">
+                    <?php the_field('promotion-promotion-price') ?>
+                </div>
+                <div class="promotion__ads-date">
+                    <?php the_field('promotion-promotion-date') ?>
+                </div>
             </div>
 
             <p class="promotion__consultation">Консультация специалистов <span class="promotion__hyphen">-</span>
@@ -387,93 +349,60 @@ get_header();
         <div class="advantages__container container">
             <h2 class="advantages__title title">Наши преимущества</h2>
             <ul class="advantages__list">
-                <li class="advantages__item">
-                    <div class="advantages__wrapper">
-                        <h3 class="advantages__subtitle title title--size-small">Современное оборудование</h3>
-                        <p class="advantages__description">В нашей клинике используется новейшее стоматологическое
-                            оборудование,
-                            имеющее все необходимые сертификаты и лицензии.</p>
-                    </div>
-                    <picture>
-                        <source media="(min-width: 1440px)" type="image/jpg"
-                            srcset="<?php echo bloginfo("template_url"); ?>/assets/images/new-items.png" width="428"
-                            height="150">
-                        <img class="advantages__image"
-                            src="<?php echo bloginfo("template_url"); ?>/assets/images/new-items.png" width="335"
-                            height="150" alt="">
-                    </picture>
-                </li>
-                <li class="advantages__item">
-                    <div class="advantages__wrapper">
-                        <h3 class="advantages__subtitle title title--size-small">Комфорт и сервис</h3>
-                        <p class="advantages__description">Наши администраторы позаботятся о вашем комфорте до и
-                            после приема, а
-                            кабинеты оборудованы удобными креслами, чтобы вы чувствовали себя на приеме спокойно и
-                            расслаблено.</p>
-                    </div>
-                    <picture>
-                        <source media="(min-width: 1440px)" type="image/jpg"
-                            srcset="<?php echo bloginfo("template_url"); ?>/assets/images/new-items.png" width="428"
-                            height="150">
-                        <img class="advantages__image"
-                            src="<?php echo bloginfo("template_url"); ?>/assets/images/new-items.png" width="335"
-                            height="150" alt="">
-                    </picture>
-                </li>
-                <li class="advantages__item">
-                    <div class="advantages__wrapper">
-                        <h3 class="advantages__subtitle title title--size-small">Индивидуальный подход</h3>
-                        <p class="advantages__description">Мы всегда готовы принять во внимание все ваши пожелания и
-                            найти
-                            персональное решение проблемы в каждом отдельном случае.</p>
-                    </div>
-                    <picture>
-                        <source media="(min-width: 1440px)" type="image/jpg"
-                            srcset="<?php echo bloginfo("template_url"); ?>/assets/images/new-items.png" width="428"
-                            height="150">
-                        <img class="advantages__image"
-                            src="<?php echo bloginfo("template_url"); ?>/assets/images/new-items.png" width="335"
-                            height="150" alt="">
-                    </picture>
-                </li>
-                <li class="advantages__item">
-                    <div class="advantages__wrapper">
-                        <h3 class="advantages__subtitle title title--size-small">Квалифицированные стоматологи</h3>
-                        <p class="advantages__description">Наши специалисты имеют высшее профессиональное
-                            образование, и высокую
-                            квалификацию.</p>
-                    </div>
-                    <picture>
-                        <source media="(min-width: 1440px)" type="image/jpg"
-                            srcset="<?php echo bloginfo("template_url"); ?>/assets/images/new-items.png" width="428"
-                            height="150">
-                        <img class="advantages__image"
-                            src="<?php echo bloginfo("template_url"); ?>/assets/images/new-items.png" width="335"
-                            height="150" alt="">
-                    </picture>
-                </li>
+
+
+            <?php 
+                        $my_posts = get_posts( array(
+                            'numberposts' => -1,
+                            'category_name'    => 'advantages',
+                            'orderby'     => 'date',
+                            'order'       => 'DESC',
+                            'post_type'   => 'post',
+                            'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                            ) );
+                            
+                            global $post;
+                            
+                            foreach( $my_posts as $post ){
+                                setup_postdata( $post );
+                                ?>
+
+
+                                <li class="advantages__item">
+                                    <div class="advantages__wrapper">
+                                        <h3 class="advantages__subtitle title title--size-small"><?php the_title(); ?></h3>
+                                        <!-- <p class="advantages__description"> -->
+                                            <div class="advantages__description">
+                                                <?php the_field('advantages-text') ?>
+                                            </div>
+                                        <!-- </p> -->
+                                    </div>
+                                    <img class="advantages__image" src="<?php the_field('advantages-image') ?>" width="335" height="150" alt="">
+                                </li>
+
+
+                            <?php
+                            }
+                            
+                            wp_reset_postdata();
+                            ?>
+
             </ul>
         </div>
     </section>
 
     <section class="page-index__promo-1 promo">
         <div class="promo__container container">
+            
             <div class="promo__wrapper">
-                <h2 class="promo__title title title--size-small">Мы работаем с микроскопом!</h2>
-                <p class="promo__text">Использование стоматологического микроскопа позволяет нам проводить
-                    лечение с высокой точностью. Благодаря увеличению мы можем лучше видеть
-                    мельчайшие детали, что обеспечивает более эффективное и безопасное
-                    лечение для наших пациентов.</p>
-                <button id="modal-button" class="promo__button button button--primary" type="button">Записаться</button>
+                <h2 class="promo__title title title--size-small"><?php the_field('promo1-title'); ?></h2>
+                <?php the_field('promo1-description'); ?>
+                <button id="modal-button" class="promo__button button button--primary">Записаться</button>
             </div>
-            <picture class="promo__picture">
-                <source media="(min-width: 1440px)" type="image/png"
-                    srcset="<?php echo bloginfo("template_url"); ?>/assets/images/doctor-with-micro-desktop.png"
-                    width="582" height="358">
-                <img class="promo__image"
-                    src="<?php echo bloginfo("template_url"); ?>/assets/images/doctor-with-micro.jpg" width="335"
-                    height="250" alt="Чистка зубов.">
-            </picture>
+            <div class="promo__picture">
+                <img class="promo__image" src="<?php the_field('promo1-image'); ?>" width="335" height="250"
+                alt="Чистка зубов.">
+            </div>
         </div>
     </section>
 
@@ -493,45 +422,44 @@ get_header();
                     нас</a>
             </div>
             <ul class="follow__list">
-                <li class="follow__item">
-                    <a class="follow__item-link" href="#">
-                        <picture>
-                            <source media="(min-width: 1440px)" type="image/jpg"
-                                srcset="<?php echo bloginfo("template_url"); ?>/assets/images/insta-block-desktop.jpg"
-                                width="378" height="250">
-                            <img class="follow__image"
-                                src="<?php echo bloginfo("template_url"); ?>/assets/images/insta-block.jpg" width="335"
-                                height="250" alt=".">
-                        </picture>
-                        <p class="follow__text">Почему зуб может потемнеть</p>
-                    </a>
-                </li>
-                <li class="follow__item">
-                    <a class="follow__item-link" href="#">
-                        <picture>
-                            <source media="(min-width: 1440px)" type="image/jpg"
-                                srcset="<?php echo bloginfo("template_url"); ?>/assets/images/insta-block-desktop.jpg"
-                                width="378" height="250">
-                            <img class="follow__image"
-                                src="<?php echo bloginfo("template_url"); ?>/assets/images/insta-block.jpg" width="335"
-                                height="250" alt=".">
-                        </picture>
-                        <p class="follow__text">Почему зуб может потемнеть</p>
-                    </a>
-                </li>
-                <li class="follow__item">
-                    <a class="follow__item-link" href="#">
-                        <picture>
-                            <source media="(min-width: 1440px)" type="image/jpg"
-                                srcset="<?php echo bloginfo("template_url"); ?>/assets/images/insta-block-desktop.jpg"
-                                width="378" height="250">
-                            <img class="follow__image"
-                                src="<?php echo bloginfo("template_url"); ?>/assets/images/insta-block.jpg" width="335"
-                                height="250" alt=".">
-                        </picture>
-                        <p class="follow__text">Почему зуб может потемнеть</p>
-                    </a>
-                </li>
+
+
+
+
+            <?php 
+                        $my_posts = get_posts( array(
+                            'numberposts' => 3,
+                            'category_name'    => 'follow',
+                            'orderby'     => 'date',
+                            'order'       => 'DESC',
+                            'post_type'   => 'post',
+                            'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                            ) );
+                            
+                            global $post;
+                            
+                            foreach( $my_posts as $post ){
+                                setup_postdata( $post );
+                                ?>
+
+
+                                    <li class="follow__item">
+                                        <img class="follow__image"
+                                            src="<?php the_field('follow-image') ?>" width="335"
+                                            height="250" alt=".">
+                                        <div class="follow__text">
+                                            <?php the_field('follow-description') ?>
+                                        </div>
+                                    </li>
+
+
+                            <?php
+                            }
+                            
+                            wp_reset_postdata();
+                            ?>
+
+                
             </ul>
         </div>
     </section>
@@ -539,25 +467,12 @@ get_header();
     <section class="page-index__about about">
         <div class="about__container container">
             <picture class="about__picture">
-                <source media="(min-width: 1440px)" type="image/png"
-                    srcset="<?php echo bloginfo("template_url"); ?>/assets/images/small-doctor-showing-desktop.png"
-                    width="582" height="328">
-                <img class="about__image"
-                    src="<?php echo bloginfo("template_url"); ?>/assets/images/small-doctor-showing.png" width="335"
-                    height="250" alt="Доктора.">
-            </picture>
+                <img class="about__image" src="<?php the_field('about-image') ?>" width="335" height="250" alt="Доктора.">
             <div class="about__wrapper">
-                <h2 class="about__title title">О клинике</h2>
-                <p class="about__description">Наша клиника открылась в 2022 году.
-                    Мы предлагаем полный спектр стоматологических услуг: лечение зубов, имплантация, протезирование,
-                    эстетическая
-                    коррекция улыбки, хирургическая помощь и многое другое. Клиника оснащена новейшим оборудованием,
-                    а в ней
-                    работают высококвалифицированные врачи.
-                    Также, оказывая стоматологическую помощь, мы не забываем и о маленьких пациентах. Благодаря
-                    индивидуальному
-                    подходу, наши пациенты с первого визита чувствуют себя уверенно и комфортно.
-                </p>
+                <h2 class="about__title title"><?php the_field('about-title') ?></h2>
+                <div class="about__description">
+                    <?php the_field('about-description') ?>
+                </div>
                 <button id="modal-button" class="about__button button button--primary" type="button">Записаться</button>
             </div>
         </div>
@@ -565,46 +480,18 @@ get_header();
 
     <section class="page-index__doctor doctor">
         <div class="doctor__container container">
-            <h2 class="doctor__title title">Главный врач</h2>
-            <p class="doctor__name">Сангов Абдулло Мамашарифович</p>
-            <picture class="doctor__picture">
-                <source media="(min-width: 1440px)" type="image/png"
-                    srcset="<?php echo bloginfo("template_url"); ?>/assets/images/doctor-foto-desktop.png" width="582"
-                    height="818">
-                <img class="doctor__image" src="<?php echo bloginfo("template_url"); ?>/assets/images/doctor-foto.png"
-                    width="335" height="300" alt="Доктор.">
-            </picture>
-            <p class="doctor__description">Главный врач стоматолог (хирург-имплантолог, ортопед, терапевт) Абдулло
-                Мамашарифович – хирург-стоматолог со стажем более 8 лет.Специалист в реконструктивной хирургии
-                (костная
-                пластика, синус-лифтинг, аугментация). Проводит операции по микрохирургической пластике дёсен.
-                Работает только
-                с применением оптики, микроскопа. Как стоматолог-имплантолог, Абдулло Мамашарифович установил более
-                1000
-                имплантатов. Он обладает значительным опытом фиксации имплантатов на месте передних зубов и
-                восстанавливает
-                утраченные зубы по технологии одномоментной имплантации.
-                Проводит зубосохраняющие операции
-                и удаление зубов любой сложности, а также аутотрансплантацию зубов. Специализируется на съемном и
-                несъёмном
-                протезировании, протезировании с применением имплантов Dentium и Straumann. Проводит приём с
-                составлением
-                комплексных планов лечения. Занимается эстетической реабилитацией и протезированием керамическими
-                реставрациями. В своей работе использует современные методики диагностики. Работает с применением
-                новейших
-                усовершенствованных технологий
-                в стоматологии, таких как стоматологический микроскоп для улучшения визуализации рабочего поля.
-                Также
-                занимается эстетической и функциональной стоматологией и ведет фотопротокол зубов. Абдулло
-                Мамашарифович-специализируется на лечении кариеса,художественной реставрации жевательной и
-                центральной группы
-                зубов, эндодонтическом лечении. Работа только под увеличением. </p>
-            <p class="doctor__education">
-                2016 г. – закончил Новосибирский
-                Государственный Медицинский университет.
-                2018 г. -ординатура по хирургической стоматологии.
-                2019г - специализация по ортопедической стоматологии
-            </p>
+            <h2 class="doctor__title title"><?php the_field('doctor-title') ?></h2>
+            <div class="doctor__name">
+                <?php the_field('doctor-name') ?>
+            </div>
+            <img class="doctor__image" src="<?php the_field('doctor-image') ?>"
+                width="335" height="300" alt="Доктор.">
+                <div class="doctor__description">
+                    <?php the_field('doctor-description') ?>
+                </div>
+            <div class="doctor__education">
+                <?php the_field('doctor-education') ?>
+            </div>
             <div class="doctor__wrapper">
                 <button id="modal-button" class="doctor__button button button--primary"
                     type="button">Записаться</button>
@@ -639,33 +526,40 @@ get_header();
                 Мы используем передовые международные программы для дополнительного обучения наших врачей и оснащаем
                 клинику
                 самым современным оборудованием.</p>
-            <div class="swiper">
+            <div class="swiper swiper0">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img class="certificates__image"
-                            src="<?php echo bloginfo("template_url"); ?>/assets/images/certificate-desktop.png"
-                            width="378" height="265" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img class="certificates__image"
-                            src="<?php echo bloginfo("template_url"); ?>/assets/images/certificate-desktop.png"
-                            width="378" height="265" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img class="certificates__image"
-                            src="<?php echo bloginfo("template_url"); ?>/assets/images/certificate-desktop.png"
-                            width="378" height="265" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img class="certificates__image"
-                            src="<?php echo bloginfo("template_url"); ?>/assets/images/certificate-desktop.png"
-                            width="378" height="265" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img class="certificates__image"
-                            src="<?php echo bloginfo("template_url"); ?>/assets/images/certificate-desktop.png"
-                            width="378" height="265" alt="">
-                    </div>
+
+
+                <?php 
+                        $my_posts = get_posts( array(
+                            'numberposts' => -1,
+                            'category_name'    => 'certificates',
+                            'orderby'     => 'date',
+                            'order'       => 'DESC',
+                            'post_type'   => 'post',
+                            'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                            ) );
+                            
+                            global $post;
+                            
+                            foreach( $my_posts as $post ){
+                                setup_postdata( $post );
+                                ?>
+
+                                <div class="swiper-slide">
+                                    <img class="certificates__image"
+                                        src="<?php the_field('certificates-image'); ?>"
+                                        width="378" height="265" alt="">
+                                </div>
+
+
+                            <?php
+                                // формат вывода the_title() ...
+                            }
+                            
+                            wp_reset_postdata();
+                            ?>
+
                 </div>
                 <div class="swiper-container">
                     <div class="swiper-button-prev"></div>
@@ -676,209 +570,152 @@ get_header();
         </div>
     </section>
 
-    <section class="page-index__team team">
+    <section class="page-index__team team"> 
         <div class="team__container container">
             <h2 class="team__title title title--color">Наши врачи</h2>
-
+                
             <div class="swiper1 swiper">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
-                    <div class="swiper-slide">
-                        <div class="team__swiper-list">
-                            <div class="team__item">
-                                <img class="team__image"
-                                    src="<?php echo bloginfo("template_url"); ?>/assets/images/doctor-sangov.png"
-                                    width="335" height="250" alt="Доктор Сангов.">
-                                <h3 class="team__subtitle"><span
-                                        class="title title--size-small title--color">Сангов</span>Абдулло
-                                    Мамашарифович</h3>
-                                <p class="team__text">Главный врач стоматолог, хирург-имплантолог, ортопед,
-                                    терапевт<br><br>Ксения
-                                    Владимировна-специализируется на лечении кариеса,художественной реставрации
-                                    жевательной и
-                                    центральной
-                                    группы зубов, эндодонтическом лечении. Стоматологический прием проводит только
-                                    под микроскопом,
-                                    в период лечения ведется фотопротокол.</p>
-                                <ul class="team__socials socials">
-                                    <li class="socials__social">
-                                        <a class="socials__link socials__link--instagram socials__link--color"
-                                            target="_blank" rel="noopener noreferrer"
-                                            href="https://www.instagram.com/dr.sangov/">
-                                            <span class="visually-hidden">Instagram</span>
-                                        </a>
-                                    </li>
-                                    <li class="socials__social">
-                                        <a class="socials__link socials__link--prodoctorov socials__link--color"
-                                            target="_blank" rel="noopener noreferrer"
-                                            href="<?php the_field('prodoctorov', 2); ?>">
-                                            <span class="visually-hidden">Продокторов</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="team__item">
-                                <img class="team__image"
-                                    src="<?php echo bloginfo("template_url"); ?>/assets/images/pasternak.png"
-                                    width="335" height="250" alt="Доктор Сангов.">
-                                <h3 class="team__subtitle"><span
-                                        class="title title--size-small title--color">Пастернак</span>Ксения
-                                    Владимировна </h3>
-                                <p class="team__text">Врач стоматолог-терапевт
-                                    микроскопист, ортопед<br><br>Ксения Владимировна-специализируется на лечении
-                                    кариеса,художественной
-                                    реставрации жевательной и центральной группы зубов, эндодонтическом лечении.
-                                    Стоматологический прием
-                                    проводит только под микроскопом,
-                                    в период лечения ведется фотопротокол.</p>
-                            </div>
-                            <div class="team__item">
-                                <img class="team__image"
-                                    src="<?php echo bloginfo("template_url"); ?>/assets/images/masrurov.png" width="335"
-                                    height="250" alt="Доктор Сангов.">
-                                <h3 class="team__subtitle"><span
-                                        class="title title--size-small title--color">Масруров</span>Шахриер
-                                    Гафурович</h3>
-                                <p class="team__text">Врач стоматолог общей практики<br><br>Специализируется на
-                                    составлении
-                                    индивидуального комплексного плана лечения, лечении кариеса и его осложнений,
-                                    профессиональная
-                                    чистка
-                                    зубов. Делает реставрации жевательной группы зубов. Удаление зубов.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="team__swiper-list">
-                            <div class="team__item">
-                                <img class="team__image"
-                                    src="<?php echo bloginfo("template_url"); ?>/assets/images/doctor-sangov.png"
-                                    width="335" height="250" alt="Доктор Сангов.">
-                                <h3 class="team__subtitle"><span
-                                        class="title title--size-small title--color">Сангов</span>Абдулло
-                                    Мамашарифович</h3>
-                                <p class="team__text">Главный врач стоматолог, хирург-имплантолог, ортопед,
-                                    терапевт<br><br>Ксения
-                                    Владимировна-специализируется на лечении кариеса,художественной реставрации
-                                    жевательной и
-                                    центральной
-                                    группы зубов, эндодонтическом лечении. Стоматологический прием проводит только
-                                    под микроскопом,
-                                    в период лечения ведется фотопротокол.</p>
-                                <ul class="team__socials socials">
-                                    <li class="socials__social">
-                                        <a class="socials__link socials__link--instagram socials__link--color"
-                                            target="_blank" rel="noopener noreferrer"
-                                            href="https://www.instagram.com/dr.sangov/">
-                                            <span class="visually-hidden">Instagram</span>
-                                        </a>
-                                    </li>
-                                    <li class="socials__social">
-                                        <a class="socials__link socials__link--prodoctorov socials__link--color"
-                                            target="_blank" rel="noopener noreferrer"
-                                            href="<?php the_field('prodoctorov', 2); ?>">
-                                            <span class="visually-hidden">Продокторов</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="team__item">
-                                <img class="team__image"
-                                    src="<?php echo bloginfo("template_url"); ?>/assets/images/pasternak.png"
-                                    width="335" height="250" alt="Доктор Сангов.">
-                                <h3 class="team__subtitle"><span
-                                        class="title title--size-small title--color">Пастернак</span>Ксения
-                                    Владимировна </h3>
-                                <p class="team__text">Врач стоматолог-терапевт
-                                    микроскопист, ортопед<br><br>Ксения Владимировна-специализируется на лечении
-                                    кариеса,художественной
-                                    реставрации жевательной и центральной группы зубов, эндодонтическом лечении.
-                                    Стоматологический прием
-                                    проводит только под микроскопом,
-                                    в период лечения ведется фотопротокол.</p>
-                            </div>
-                            <div class="team__item">
-                                <img class="team__image"
-                                    src="<?php echo bloginfo("template_url"); ?>/assets/images/masrurov.png" width="335"
-                                    height="250" alt="Доктор Сангов.">
-                                <h3 class="team__subtitle"><span
-                                        class="title title--size-small title--color">Масруров</span>Шахриер
-                                    Гафурович</h3>
-                                <p class="team__text">Врач стоматолог общей практики<br><br>Специализируется на
-                                    составлении
-                                    индивидуального комплексного плана лечения, лечении кариеса и его осложнений,
-                                    профессиональная
-                                    чистка
-                                    зубов. Делает реставрации жевательной группы зубов. Удаление зубов.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="team__swiper-list">
-                            <div class="team__item">
-                                <img class="team__image"
-                                    src="<?php echo bloginfo("template_url"); ?>/assets/images/doctor-sangov.png"
-                                    width="335" height="250" alt="Доктор Сангов.">
-                                <h3 class="team__subtitle"><span
-                                        class="title title--size-small title--color">Сангов</span>Абдулло
-                                    Мамашарифович</h3>
-                                <p class="team__text">Главный врач стоматолог, хирург-имплантолог, ортопед,
-                                    терапевт<br><br>Ксения
-                                    Владимировна-специализируется на лечении кариеса,художественной реставрации
-                                    жевательной и
-                                    центральной
-                                    группы зубов, эндодонтическом лечении. Стоматологический прием проводит только
-                                    под микроскопом,
-                                    в период лечения ведется фотопротокол.</p>
-                                <ul class="team__socials socials">
-                                    <li class="socials__social">
-                                        <a class="socials__link socials__link--instagram socials__link--color"
-                                            target="_blank" rel="noopener noreferrer"
-                                            href="https://www.instagram.com/dr.sangov/">
-                                            <span class="visually-hidden">Instagram</span>
-                                        </a>
-                                    </li>
-                                    <li class="socials__social">
-                                        <a class="socials__link socials__link--prodoctorov socials__link--color"
-                                            target="_blank" rel="noopener noreferrer"
-                                            href="<?php the_field('prodoctorov', 2); ?>">
-                                            <span class="visually-hidden">Продокторов</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="team__item">
-                                <img class="team__image"
-                                    src="<?php echo bloginfo("template_url"); ?>/assets/images/pasternak.png"
-                                    width="335" height="250" alt="Доктор Сангов.">
-                                <h3 class="team__subtitle"><span
-                                        class="title title--size-small title--color">Пастернак</span>Ксения
-                                    Владимировна </h3>
-                                <p class="team__text">Врач стоматолог-терапевт
-                                    микроскопист, ортопед<br><br>Ксения Владимировна-специализируется на лечении
-                                    кариеса,художественной
-                                    реставрации жевательной и центральной группы зубов, эндодонтическом лечении.
-                                    Стоматологический прием
-                                    проводит только под микроскопом,
-                                    в период лечения ведется фотопротокол.</p>
-                            </div>
-                            <div class="team__item">
-                                <img class="team__image"
-                                    src="<?php echo bloginfo("template_url"); ?>/assets/images/masrurov.png" width="335"
-                                    height="250" alt="Доктор Сангов.">
-                                <h3 class="team__subtitle"><span
-                                        class="title title--size-small title--color">Масруров</span>Шахриер
-                                    Гафурович</h3>
-                                <p class="team__text">Врач стоматолог общей практики<br><br>Специализируется на
-                                    составлении
-                                    индивидуального комплексного плана лечения, лечении кариеса и его осложнений,
-                                    профессиональная
-                                    чистка
-                                    зубов. Делает реставрации жевательной группы зубов. Удаление зубов.</p>
-                            </div>
-                        </div>
-                    </div>
+                            
+                            <?php 
+                                $my_posts = get_posts( array(
+                                    'numberposts' => -1,
+                                    'category_name'    => 'slider5',
+                                    'orderby'     => 'date',
+                                    'order'       => 'DESC',
+                                    'post_type'   => 'post',
+                                    'suppress_filters' => true, // vernutsya posje peredelat
+                                    ) );
+                                    
+                                    global $post;
+                                    
+                                    foreach( $my_posts as $post ){
+                                        setup_postdata( $post );
+                                        ?>
+                                        
+
+                                            <div class="swiper-slide">
+
+                                                <ul class="team__slider">
+                                                    <li class="team__item">
+
+                                                    
+                                                        <img class="team__image" src="<?php the_field('big-slider-image'); ?>" width="335" height="250" alt=".">
+                                                        <h3 class="team__subtitle title title--size-small title--color"><?php the_field('big-slider-title'); ?><span><?php the_field('big-slider-subtitle'); ?></span></h3>
+                                                        <div class="team__text">
+                                                            <?php the_field('big-slider-description'); ?>
+                                                        </div>
+
+                                                        <?php
+                                                        $field = get_field('big-slider-socials');
+
+                                                        if ($field == 'on') {
+                                                            ?>
+                                                                <ul class="team__socials socials">
+                                                            <li class="socials__social">
+                                                                <a class="socials__link socials__link--instagram socials__link--color"
+                                                                    target="_blank" rel="noopener noreferrer"
+                                                                    href="<?php the_field('big-slider-instagram'); ?>">
+                                                                    <span class="visually-hidden">Instagram</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="socials__social">
+                                                                <a class="socials__link socials__link--prodoctorov socials__link--color"
+                                                                    target="_blank" rel="noopener noreferrer"
+                                                                    href="<?php the_field('big-slider-prodoctorov'); ?>">
+                                                                    <span class="visually-hidden">Продокторов</span>
+                                                                </a>
+                                                            </li>
+                                                                </ul>
+                                                            <?php
+                                                        }
+                                                    ?>
+
+                                                    </li>
+                                                    
+                                                    <li class="team__item">
+                                                        <img class="team__image" src="<?php the_field('big-slider-image-2'); ?>" width="335" height="250" alt=".">
+                                                        <h3 class="team__subtitle title title--size-small title--color"><?php the_field('big-slider-title-2'); ?><span><?php the_field('big-slider-subtitle-2'); ?></span></h3>
+                                                        <div class="team__text">
+                                                            <?php the_field('big-slider-description-2'); ?>
+                                                        </div>
+
+                                                        <?php
+                                                        $field2 = get_field('big-slider-socials-2');
+
+                                                        if ($field2 == 'on') {
+                                                            ?>
+                                                                <ul class="team__socials socials">
+                                                                    <li class="socials__social">
+                                                                        <a class="socials__link socials__link--instagram socials__link--color"
+                                                                            target="_blank" rel="noopener noreferrer"
+                                                                            href="<?php the_field('big-slider-instagram-2'); ?>">
+                                                                            <span class="visually-hidden">Instagram</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="socials__social">
+                                                                        <a class="socials__link socials__link--prodoctorov socials__link--color"
+                                                                            target="_blank" rel="noopener noreferrer"
+                                                                            href="<?php the_field('big-slider-prodoctorov-2'); ?>">
+                                                                            <span class="visually-hidden">Продокторов</span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            <?php
+                                                        }
+                                                    ?>
+
+                                                    </li>
+                                                    
+                                                    <li class="team__item">
+                                                        <img class="team__image" src="<?php the_field('big-slider-image-3'); ?>" width="335" height="250" alt=".">
+                                                        <h3 class="team__subtitle title title--size-small title--color"><?php the_field('big-slider-title-3'); ?><span><?php the_field('big-slider-subtitle-3'); ?></span></h3>
+                                                        <div class="team__text">
+                                                            <?php the_field('big-slider-description-3'); ?>
+                                                        </div>
+
+                                                        <?php
+                                                        $field3 = get_field('big-slider-socials-3');
+
+                                                        if ($field3 == 'on') {
+                                                            ?>
+                                                                <ul class="team__socials socials">
+                                                            <li class="socials__social">
+                                                                <a class="socials__link socials__link--instagram socials__link--color"
+                                                                    target="_blank" rel="noopener noreferrer"
+                                                                    href="<?php the_field('big-slider-instagram-3'); ?>">
+                                                                    <span class="visually-hidden">Instagram</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="socials__social">
+                                                                <a class="socials__link socials__link--prodoctorov socials__link--color"
+                                                                    target="_blank" rel="noopener noreferrer"
+                                                                    href="<?php the_field('big-slider-prodoctorov-3'); ?>">
+                                                                    <span class="visually-hidden">Продокторов</span>
+                                                                </a>
+                                                            </li>
+                                                                </ul>
+                                                            <?php
+                                                        }
+                                                    ?>
+
+                                                    </li>
+                                                </ul>
+
+                                                
+                                            </div>
+
+                            <?php
+                                        // формат вывода the_title() ...
+                                    }
+                                    
+                                    wp_reset_postdata();
+                        ?>
+
+
+
                 </div>
                 <div class="swiper-container">
                     <div class="swiper-button-prev1"></div>
@@ -892,72 +729,65 @@ get_header();
 
     <section class="page-index__promo-2 promo">
         <div class="promo__container container">
+            
             <div class="promo__wrapper">
-                <h2 class="promo__title title title--size-small">Красивая Улыбка с Винирами и Коронками</h2>
-                <p class="promo__text">Добейтесь совершенной улыбки с нашими высококачественными винирами и
-                    коронками. Мы
-                    предлагаем индивидуальные решения для восстановления и улучшения зубов, обеспечивая естественный
-                    внешний вид
-                    и долговечность.</p>
+                <h2 class="promo__title title title--size-small"><?php the_field('promo-with-price-title') ?></h2>
+                <?php the_field('promo-with-price-text') ?>
                 <div class="promo__prices">
-                    <span class="promo__price">26 500 ₽</span>
-                    <span class="promo__old-price">35 000 ₽</span>
+                    <span class="promo__price"><?php the_field('promo-with-price-new') ?></span>
+                    <span class="promo__old-price"><?php the_field('promo-with-price-old') ?></span>
                 </div>
-                <button id="modal-button" class="promo__button button button--primary" type="button">Записаться</button>
+                <button id="modal-button" class="promo__button button button--primary">Записаться</button>
             </div>
-            <picture class="promo__picture">
-                <source media="(min-width: 1440px)" type="image/png"
-                    srcset="<?php echo bloginfo("template_url"); ?>/assets/images/girl-cleaning.png" width="582"
-                    height="358">
-                <img class="promo__image"
-                    src="<?php echo bloginfo("template_url"); ?>/assets/images/girl-cleaning-small.png" width="357"
-                    height="250" alt="Чистка зубов.">
-            </picture>
+            <div class="promo__picture">
+                <img class="promo__image" src="<?php the_field('promo-with-price-image') ?>" width="335" height="250"
+                alt="Чистка зубов.">
+            </div>
         </div>
     </section>
 
-    <section class="page-index__before-after before-after">
+     <section class="page-index__before-after before-after">
         <div class="before-after__container container">
             <h2 class="before-after__title title">Наши последние работы</h2>
-            <div class="swiper">
+            <div class="swiper swiper0">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img class="before-after__image"
-                            src="<?php echo bloginfo("template_url"); ?>/assets/images/implantation-1.png" width="335"
-                            height="300" alt="">
-                        <h3 class="before-after__subtitle title title--size-small">Хирургия / имплантация</h3>
-                        <p class="before-after__text">Удаление одномоментная имплантация зуба 2.1.временная коронка
-                            на следующий день.</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <img class="before-after__image"
-                            src="<?php echo bloginfo("template_url"); ?>/assets/images/implantation-1.png" width="335"
-                            height="300" alt="">
-                        <h3 class="before-after__subtitle title title--size-small">Виниры</h3>
-                        <p class="before-after__text">1Керамические виниры 6 единиц</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <img class="before-after__image"
-                            src="<?php echo bloginfo("template_url"); ?>/assets/images/implantation-1.png" width="335"
-                            height="300" alt="">
-                        <h3 class="before-after__subtitle title title--size-small">Виниры</h3>
-                        <p class="before-after__text">2Керамические виниры 6 единиц</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <img class="before-after__image"
-                            src="<?php echo bloginfo("template_url"); ?>/assets/images/implantation-1.png" width="335"
-                            height="300" alt="">
-                        <h3 class="before-after__subtitle title title--size-small">Виниры</h3>
-                        <p class="before-after__text">3Керамические виниры 6 единиц</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <img class="before-after__image"
-                            src="<?php echo bloginfo("template_url"); ?>/assets/images/implantation-1.png" width="335"
-                            height="300" alt="">
-                        <h3 class="before-after__subtitle title title--size-small">Виниры</h3>
-                        <p class="before-after__text">4Керамические виниры 6 единиц</p>
-                    </div>
+                    
+                    <?php 
+                        $my_posts = get_posts( array(
+                            'numberposts' => -1,
+                            'category_name'    => 'slider4',
+                            'orderby'     => 'date',
+                            'order'       => 'DESC',
+                            'post_type'   => 'post',
+                            'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                            ) );
+                            
+                            global $post;
+                            
+                            foreach( $my_posts as $post ){
+                                setup_postdata( $post );
+                                ?>
+
+
+                                    <div class="swiper-slide">
+                                        <img class="before-after__image"
+                                            src="<?php the_field('slider-image') ?>" width="335"
+                                            height="300" alt="">
+                                        <h3 class="before-after__subtitle title title--size-small"><?php the_title(); ?></h3>
+                                        <p class="before-after__text"><?php the_field('slider-text'); ?></p>
+                                    </div>
+
+
+                            <?php
+                                // формат вывода the_title() ...
+                            }
+                            
+                            wp_reset_postdata();
+                            ?>
+
                 </div>
+
+
                 <div class="swiper-container">
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-pagination"></div>
@@ -966,6 +796,7 @@ get_header();
             </div>
         </div>
     </section>
+
 
     <section class="page-index__review review">
         <div class="review__container">
